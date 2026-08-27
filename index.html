@@ -1,0 +1,1378 @@
+<meta charset="utf-8">
+<title>PACE Health — Paediatric Speech Pathology Training &amp; Development</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* ==================================================================
+   PACE HEALTH DESIGN SYSTEM
+   Navy dominates. Green is the single sharp accent. Lavender and
+   green tints carry the cards. White ground. Cambria headings,
+   Calibri everything else. No accent rules, no edge stripes.
+================================================================== */
+:root{
+  --navy:#1C194E; --navy-body:#2A2760; --indigo:#322D6E; --deep-blue:#002060;
+  --green:#76BC1E; --green-br:#92D050; --green-dp:#5C9E1F;
+  --lav:#716F94;
+  --s-lav:#F4F4F9; --s-lav2:#E4E3F0; --s-green:#E3F0D2; --s-green2:#CFE6AF; --s-teal:#EAF3F3;
+  --flag-g:#76BC1E; --flag-o:#C99323; --flag-r:#B8432F;
+  --flag-o-t:#FAF2E2; --flag-r-t:#F7E9E6;
+  --serif:Cambria,"Palatino Linotype","Book Antiqua",Georgia,serif;
+  --sans:Calibri,"Segoe UI",Candara,"Trebuchet MS",system-ui,-apple-system,sans-serif;
+  --maxw:1100px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--navy-body);font:15.5px/1.62 var(--sans)}
+h1,h2,h3,h4,h5,.serif{font-family:var(--serif);color:var(--navy)}
+b,strong{color:var(--navy)}
+
+/* ---------- title lockup / header (bookend: corner circles) ---------- */
+header.site{position:relative;overflow:hidden;background:#fff;padding:30px 22px 24px}
+header.site .cc{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+header.site .cc1{width:200px;height:200px;background:var(--navy);right:-72px;top:-88px}
+header.site .cc2{width:104px;height:104px;background:var(--green-br);right:74px;top:44px}
+header.site .cc3{width:64px;height:64px;background:var(--s-lav2);right:-18px;top:104px}
+.wrap{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
+header.site .wrap{max-width:calc(var(--maxw) - 190px);margin-right:auto;margin-left:auto;padding-right:170px}
+.eyebrow{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--green);margin-bottom:6px}
+header.site h1{margin:0;font-size:34px;line-height:1.12;font-weight:700}
+header.site h1 .accent{color:var(--green-dp)}
+header.site .sub{margin:8px 0 0;font-family:var(--serif);font-size:17px;color:var(--deep-blue)}
+@media(max-width:780px){
+  header.site .wrap{max-width:100%;padding-right:0}
+  header.site .cc1,header.site .cc2,header.site .cc3{display:none}
+  header.site h1{font-size:27px}
+}
+
+/* ---------- nav ---------- */
+nav.tabs{position:sticky;top:0;z-index:60;background:var(--navy)}
+nav.tabs .inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:2px;overflow-x:auto}
+nav.tabs button{flex:0 0 auto;background:none;border:0;color:#B6B3D2;cursor:pointer;font-family:var(--sans);
+  font-size:13.5px;font-weight:600;padding:13px 15px;border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs button:hover{color:#fff}
+nav.tabs button.on{color:#fff;border-bottom-color:var(--green-br)}
+nav.tabs .num{display:inline-block;min-width:19px;height:19px;line-height:19px;text-align:center;
+  background:rgba(255,255,255,.15);border-radius:50%;font-family:var(--serif);font-weight:700;
+  font-size:11px;margin-right:8px;vertical-align:1px}
+nav.tabs button.on .num{background:var(--green)}
+nav.tabs button.done .num{background:var(--green);color:var(--navy)}
+
+main{max-width:var(--maxw);margin:0 auto;padding:30px 22px 70px}
+section.page{display:none}section.page.on{display:block;animation:f .2s ease}
+@keyframes f{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ---------- page lockup ---------- */
+.lockup{margin:0 0 22px}
+.lockup h2{margin:0;font-size:31px;line-height:1.16;font-weight:700}
+.lockup .subline{margin:9px 0 0;font-size:16.5px;color:var(--navy-body);max-width:68ch}
+
+/* ---------- section header: numbered navy badge, no rule ---------- */
+h3.sec{display:flex;align-items:center;gap:11px;font-size:20px;margin:34px 0 6px;font-weight:700}
+h3.sec .badge{width:29px;height:29px;border-radius:50%;background:var(--navy);color:#fff;
+  font-family:var(--serif);font-weight:700;font-size:14px;display:grid;place-items:center;flex:0 0 auto}
+p.sub{margin:0 0 14px;color:var(--navy-body);font-size:15px;max-width:70ch}
+p.cap{font-size:13px;color:var(--lav)}
+ul.t{margin:8px 0 14px;padding-left:20px}ul.t li{margin:5px 0}
+
+/* ---------- tinted cards, no borders ---------- */
+.card{background:var(--s-lav);border-radius:12px;padding:20px 22px;margin:0 0 16px}
+.card.green{background:var(--s-green)}
+.card.teal{background:var(--s-teal)}
+.card h4{margin:0 0 8px;font-size:18px}
+
+/* ---------- notes: tinted blocks, no edge stripes ---------- */
+.note{border-radius:12px;padding:14px 18px;margin:14px 0;font-size:15px;background:var(--s-lav)}
+.note.warn{background:var(--flag-o-t)}
+.note.warn b{color:#8A6410}
+.note.flag{background:var(--flag-r-t)}
+.note.flag b{color:var(--flag-r)}
+
+/* ---------- full-width action bar ---------- */
+.bar{background:var(--green-br);border-radius:12px;padding:16px 22px;margin:16px 0;
+  font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);line-height:1.42}
+.bar.navy{background:var(--navy);color:#fff}
+.bar.navy b{color:var(--green-br)}
+.bar .lbl{display:block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--navy);opacity:.65;margin-bottom:5px}
+.bar.navy .lbl{color:var(--green-br);opacity:1}
+
+/* ---------- tables ---------- */
+table.g{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:14.5px}
+table.g th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-family:var(--sans);
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+table.g td{padding:10px 12px;vertical-align:top}
+table.g tbody tr{background:#fff}
+table.g tbody tr:nth-child(odd){background:var(--s-lav)}
+table.run td.t{white-space:nowrap;font-family:var(--serif);font-weight:700;color:var(--green-dp);width:74px}
+
+/* ==================== WIDGETS ==================== */
+.w{background:var(--s-lav);border-radius:12px;margin:14px 0 18px;overflow:hidden}
+.w-head{display:flex;align-items:center;gap:11px;padding:13px 18px}
+.w-head .ico{width:32px;height:32px;border-radius:50%;background:#fff;color:var(--navy);
+  display:grid;place-items:center;font-size:15px;font-weight:700;flex:0 0 auto;font-family:var(--serif)}
+.w-head .ttl{font-family:var(--serif);font-weight:700;font-size:16.5px;color:var(--navy)}
+.w-head .hint{margin-left:auto;font-size:12px;color:var(--lav)}
+.w-body{padding:0 18px 18px}
+
+/* diagram inside the signature navy frame */
+.dia{display:grid;grid-template-columns:1.12fr .88fr;gap:16px;align-items:start}
+@media(max-width:760px){.dia{grid-template-columns:1fr}}
+.dia-frame{background:var(--navy);border-radius:10px;padding:9px}
+.dia-frame .in{background:#fff;border-radius:5px;padding:12px 12px 8px}
+.dia svg{width:100%;height:auto;display:block}
+.hot{cursor:pointer}
+.hot:hover{opacity:.86}
+.hot.sel{filter:drop-shadow(0 2px 7px rgba(28,25,78,.35))}
+.dia-panel{background:#fff;border-radius:10px;padding:15px 17px;min-height:130px}
+.dia-panel h5{margin:0 0 6px;font-size:16px}
+.dia-panel p{margin:0;font-size:14.8px;color:var(--navy-body)}
+.dia-panel .ph{color:var(--lav);font-size:14.5px}
+.dia-foot{font-size:12.5px;color:var(--lav);margin:9px 0 0}
+
+/* flip cards — checkerboard tints */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:10px}
+.fc{background:#fff;border-radius:10px;padding:14px 16px;cursor:pointer;min-height:80px;transition:background .15s}
+.fc:nth-child(even){background:var(--s-lav2)}
+.fc .f{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:15.5px;line-height:1.34}
+.fc .b{display:none;margin-top:8px;font-size:14.3px;color:var(--navy-body);line-height:1.55}
+.fc.open{background:var(--s-green)}
+.fc.open .b{display:block}
+.fc .tapme{font-size:11.5px;color:var(--lav);margin-top:6px}
+.fc.open .tapme{display:none}
+
+/* sorter */
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--lav);margin-bottom:11px}
+.legend span{display:flex;align-items:center;gap:6px}
+.sw{width:13px;height:13px;border-radius:50%}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:13px}
+.chip{border:0;background:#fff;border-radius:22px;padding:8px 15px;font:inherit;font-size:14px;
+  color:var(--lav);cursor:pointer;display:flex;align-items:center;gap:8px}
+.chip .bk{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.chip[data-b="1"]{background:var(--s-lav2);color:var(--navy)}
+.chip[data-b="2"]{background:var(--s-green);color:var(--green-dp)}
+.chip.right{box-shadow:0 0 0 2px var(--flag-g)}
+.chip.wrong{box-shadow:0 0 0 2px var(--flag-r)}
+
+/* quiz */
+.q-item{background:#fff;border-radius:11px;padding:15px 17px;margin-bottom:10px}
+.q-item .stem{font-family:var(--serif);font-weight:700;color:var(--navy);margin-bottom:10px;font-size:16px;line-height:1.4}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{text-align:left;border:0;background:var(--s-lav);border-radius:9px;padding:10px 14px;
+  font:inherit;font-size:14.5px;color:var(--navy-body);cursor:pointer;transition:background .14s}
+.opt:hover{background:var(--s-lav2)}
+.opt.pick-y{background:var(--s-green);color:var(--green-dp);font-weight:600}
+.opt.pick-n{background:var(--flag-r-t);color:var(--flag-r)}
+.opt .mk{font-family:var(--serif);font-weight:700;margin-right:8px}
+.expl{display:none;margin-top:11px;padding:12px 15px;border-radius:9px;background:var(--s-teal);font-size:14.5px}
+.expl.show{display:block}
+
+/* scale */
+.sc-row{display:grid;grid-template-columns:170px 1fr 32px;gap:12px;align-items:center;margin:10px 0}
+@media(max-width:600px){.sc-row{grid-template-columns:112px 1fr 28px;gap:8px}}
+.sc-row label{font-size:14px;color:var(--navy);font-weight:600}
+.sc-row input[type=range]{width:100%;accent-color:var(--green)}
+.sc-row .v{font-family:var(--serif);font-weight:700;color:var(--green-dp);text-align:right}
+.sc-out{margin-top:13px;padding:13px 16px;border-radius:10px;background:#fff;font-size:14.5px}
+
+/* compare */
+.cmp-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.cmp-tabs button{border:0;background:#fff;border-radius:8px;padding:9px 16px;
+  font:inherit;font-size:13.8px;font-weight:600;cursor:pointer;color:var(--lav)}
+.cmp-tabs button.on{background:var(--navy);color:#fff}
+.cmp-pane{display:none}.cmp-pane.on{display:block}
+.cmp-pane .box{border-radius:10px;padding:15px 18px;font-size:15px;line-height:1.6;background:#fff}
+.box.bad{background:var(--flag-r-t)}
+.box.good{background:var(--s-green)}
+.cmp-pane .why{margin-top:10px;font-size:13.8px;color:var(--lav)}
+
+/* checklist */
+.ck{display:flex;gap:11px;align-items:flex-start;padding:11px 14px;border-radius:10px;
+  margin-bottom:7px;background:#fff;cursor:pointer}
+.ck.on{background:var(--s-green)}
+.ck .bx{width:20px;height:20px;border-radius:50%;background:var(--s-lav2);flex:0 0 auto;margin-top:1px;
+  display:grid;place-items:center;font-size:12px;color:#fff}
+.ck.on .bx{background:var(--green)}
+.ck.on .bx::after{content:"\2713"}
+.ck .tx{font-size:14.6px}
+.ck .tx b{font-family:var(--serif)}
+.ck .tx small{display:block;color:var(--lav);font-size:13px;margin-top:2px}
+.ck-count{margin-top:10px;font-size:13px;color:var(--lav)}
+
+/* steps — numbered navy badges */
+.step{background:#fff;border-radius:11px;margin-bottom:8px;overflow:hidden}
+.step-h{display:flex;gap:12px;align-items:center;padding:13px 16px;cursor:pointer}
+.step-h .n{width:29px;height:29px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;
+  font-family:var(--serif);font-size:13.5px;font-weight:700;flex:0 0 auto}
+.step-h .t{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--navy)}
+.step-h .ar{margin-left:auto;color:var(--lav);transition:transform .18s}
+.step.open .step-h .ar{transform:rotate(90deg)}
+.step.open .step-h .n{background:var(--green)}
+.step-b{display:none;padding:0 16px 15px 57px;font-size:14.6px}
+.step.open .step-b{display:block}
+.step-b ul{margin:4px 0;padding-left:18px}
+
+/* prompts — light green card */
+.prompts{background:var(--s-green);border-radius:12px;padding:18px 22px;margin:16px 0 22px}
+.prompts h4{margin:0 0 10px;color:var(--green-dp);font-family:var(--sans);font-size:11.5px;
+  letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.prompts ol{margin:0;padding-left:20px}
+.prompts li{margin:9px 0;font-family:var(--serif);font-size:16px;color:var(--navy);line-height:1.45}
+.prompts li::marker{font-family:var(--sans);font-weight:700;color:var(--green-dp);font-size:13px}
+
+/* case studies — alternating tinted cards */
+.case{border-radius:12px;padding:20px 22px;margin:0 0 16px;background:var(--s-lav)}
+.case.alt{background:var(--s-green)}
+.case .who{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green-dp);font-weight:700}
+.case.alt .who{color:var(--green-dp)}
+.case h4{margin:5px 0 9px;font-size:21px}
+.tag{display:inline-block;background:#fff;color:var(--navy);border-radius:20px;padding:3px 12px;
+  font-size:11.5px;font-weight:700;margin:0 5px 8px 0}
+.case p{font-size:15.2px}
+.case .qs{margin-top:14px;padding-top:14px}
+.case .qs h5{margin:0 0 7px;font-family:var(--sans);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--green-dp);font-weight:700}
+.case .qs ol{margin:0;padding-left:19px}
+.case .qs li{font-family:var(--serif);font-size:15.5px;color:var(--navy);margin:7px 0}
+.reveal{margin-top:14px}
+.reveal .btn-r{background:#fff;border:0;border-radius:10px;padding:12px 16px;
+  font:inherit;font-size:14px;font-weight:600;color:var(--navy);cursor:pointer;width:100%;text-align:left}
+.reveal .btn-r:hover{color:var(--green-dp)}
+.reveal .body{display:none;margin-top:9px;background:#fff;border-radius:10px;padding:14px 17px;font-size:14.6px}
+.reveal.on .body{display:block}
+.reveal.on .btn-r{display:none}
+
+/* home */
+.homehero{position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:14px;padding:32px 34px;margin-bottom:24px}
+.homehero .cc{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+.homehero .cc1{width:230px;height:230px;background:var(--indigo);right:-72px;bottom:-104px}
+.homehero .cc2{width:120px;height:120px;background:var(--green);right:112px;bottom:-46px}
+.homehero .in{position:relative;z-index:2}
+.homehero .eyebrow{color:var(--green-br)}
+.homehero h2{margin:0 0 11px;font-size:28px;color:#fff}
+.homehero p{margin:0 0 9px;color:#CFCDE2;max-width:66ch;font-size:15.3px}
+.homehero .who{margin:14px 0 0;font-size:13.5px;color:#B6B3D2}
+.facts{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.fact{background:rgba(255,255,255,.12);border-radius:10px;padding:10px 16px;font-size:12.5px;color:#CFCDE2}
+.fact b{display:block;font-family:var(--serif);font-size:20px;color:var(--green-br)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+.mod{border-radius:12px;padding:19px 21px;cursor:pointer;position:relative;background:var(--s-lav);transition:transform .15s}
+.mod:nth-child(even){background:var(--s-green)}
+.mod:hover{transform:translateY(-2px)}
+.mod .n{display:grid;place-items:center;background:var(--navy);color:#fff;width:32px;height:32px;
+  border-radius:50%;font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:10px}
+.mod h4{margin:0 0 6px;font-size:17.5px}
+.mod p{margin:0 0 10px;font-size:14.3px;color:var(--navy-body)}
+.mod .q{font-family:var(--serif);font-size:14.6px;color:var(--green-dp);padding-top:9px}
+.mod .chk{position:absolute;top:16px;right:16px}
+.mod .chk input{width:17px;height:17px;accent-color:var(--green);cursor:pointer}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0 0}
+.btn{background:var(--navy);color:#fff;border:0;border-radius:9px;padding:11px 18px;
+  font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--indigo)}
+.btn.ghost{background:var(--s-lav);color:var(--navy)}
+.btn.ghost:hover{background:var(--s-lav2)}
+
+footer.site{background:var(--s-lav);margin-top:10px;padding:16px 0}
+footer.site .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:0 22px;font-size:12.5px;color:var(--lav)}
+
+@media print{
+  nav.tabs,.btnrow,.mod .chk,.w-head .hint{display:none!important}
+  section.page{display:block!important;page-break-after:always}
+  .fc .b,.expl,.reveal .body,.step-b,.cmp-pane{display:block!important}
+  .reveal .btn-r{display:none!important}
+  .w,.card,.case,.q-item{break-inside:avoid}
+}
+</style>
+
+<header class="site">
+  <span class="cc cc1"></span><span class="cc cc2"></span><span class="cc cc3"></span>
+  <div class="wrap">
+    <div class="eyebrow">PACE Health Management</div>
+    <h1>Paediatric <span class="accent">Speech Pathology</span></h1>
+    <p class="sub">Training &amp; Development · Module 1</p>
+  </div>
+</header>
+
+<nav class="tabs"><div class="inner" id="tabs"></div></nav>
+<main id="main"></main>
+<footer class="site"><div class="wrap">
+  <span>PACE Health Management &nbsp;·&nbsp; Helping people help themselves</span>
+  <span>Paediatric Speech Pathology T&amp;D · Module 1 · August 2026</span>
+</div></footer>
+
+<script>
+/* ============================ PALETTE ============================ */
+var C={navy:'#1C194E',body:'#2A2760',indigo:'#322D6E',blue:'#002060',
+  green:'#76BC1E',greenBr:'#92D050',greenDp:'#5C9E1F',lav:'#716F94',
+  s1:'#F4F4F9',s2:'#E4E3F0',s3:'#E3F0D2',s3d:'#CFE6AF',s4:'#EAF3F3',
+  red:'#B8432F',redT:'#F7E9E6',orange:'#C99323',orangeT:'#FAF2E2',
+  mid:'#B7B4CE',white:'#FFFFFF'};
+
+var S={
+  open:function(vb){return '<svg viewBox="'+vb+'" xmlns="http://www.w3.org/2000/svg" font-family="Calibri,Segoe UI,sans-serif">'},
+  close:'</svg>',
+  txt:function(x,y,t,o){o=o||{};return '<text x="'+x+'" y="'+y+'" fill="'+(o.fill||C.body)+'" font-size="'+(o.size||12)+
+    '" font-weight="'+(o.w||400)+'" text-anchor="'+(o.a||'middle')+
+    (o.serif?'" font-family="Cambria,Georgia,serif':'')+'" style="pointer-events:none">'+t+'</text>'},
+  arrow:'<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">'+
+        '<path d="M0,0 L0,6 L7,3 z" fill="'+C.lav+'"/></marker></defs>'
+};
+
+/* ===================== DIAGRAMS ===================== */
+var DIA_LAYERS={
+  svg:S.open('0 0 420 300')+
+    '<g class="hot" data-h="env"><ellipse cx="210" cy="150" rx="200" ry="140" fill="'+C.s1+'"/></g>'+
+    S.txt(210,32,'ENVIRONMENT',{size:11,w:700,fill:C.lav})+
+    '<g class="hot" data-h="partner"><ellipse cx="210" cy="152" rx="163" ry="114" fill="'+C.s2+'"/></g>'+
+    S.txt(210,62,'COMMUNICATION PARTNERS',{size:10.5,w:700,fill:C.lav})+
+    '<g class="hot" data-h="parent"><ellipse cx="210" cy="155" rx="126" ry="88" fill="'+C.s3+'"/></g>'+
+    S.txt(210,92,'PARENT BELIEFS AND FEAR',{size:10.5,w:700,fill:C.greenDp})+
+    '<g class="hot" data-h="self"><ellipse cx="210" cy="158" rx="88" ry="62" fill="'+C.s3d+'"/></g>'+
+    S.txt(210,120,'WHAT THE CHILD BELIEVES',{size:10,w:700,fill:C.greenDp})+
+    '<g class="hot" data-h="core"><ellipse cx="210" cy="162" rx="50" ry="35" fill="'+C.navy+'"/></g>'+
+    S.txt(210,160,'Impairment',{size:13,w:700,fill:'#fff',serif:1})+
+    S.txt(210,176,'the core',{size:10,fill:C.greenBr})+S.close,
+  panels:{
+    core:["The impairment at the core","The speech sound system, the language system, the swallow. Real, and usually the only thing a referral mentions. On its own it explains very little about how a child is actually going."],
+    self:["What the child believes about themselves","\"I'm the dumb one.\" \"I can't say it right.\" By eight or nine this layer is often doing more damage than the impairment, and it is invisible on a standardised test."],
+    parent:["Parent beliefs and fear","What they were told at diagnosis, what they read at 2am, what the GP said four years ago. This layer decides whether anything you suggest actually happens at home."],
+    partner:["Communication partners","How much time people give, whether they wait, whether they guess, whether they talk over. Often the highest-yield thing on the whole plan."],
+    env:["Environment","Classroom acoustics, pace, noise, routine, screens, siblings, a relief teacher every Thursday. Change this and the same child looks different."]
+  },
+  foot:"Two children with the same core can look nothing alike, because the layers around it differ. Click each ring."};
+
+var DIA_CPLX={
+  svg:S.open('0 0 440 210')+
+    '<g class="hot" data-h="cated"><rect x="6" y="6" width="205" height="198" rx="12" fill="'+C.s1+'"/>'+
+    '<circle cx="108" cy="82" r="32" fill="none" stroke="'+C.navy+'" stroke-width="7"/>'+
+    '<circle cx="108" cy="82" r="8" fill="'+C.navy+'"/>'+
+    '<line x1="108" y1="50" x2="108" y2="60" stroke="'+C.navy+'" stroke-width="6"/>'+
+    '<line x1="108" y1="104" x2="108" y2="114" stroke="'+C.navy+'" stroke-width="6"/>'+
+    '<line x1="76" y1="82" x2="86" y2="82" stroke="'+C.navy+'" stroke-width="6"/>'+
+    '<line x1="130" y1="82" x2="140" y2="82" stroke="'+C.navy+'" stroke-width="6"/></g>'+
+    S.txt(108,146,'COMPLICATED',{size:12.5,w:700,fill:C.navy})+
+    S.txt(108,167,'Hard, but there is a recipe',{size:11,fill:C.lav})+
+    S.txt(108,183,'Do the thing, get the result',{size:11,fill:C.lav})+
+    '<g class="hot" data-h="plex"><rect x="229" y="6" width="205" height="198" rx="12" fill="'+C.s3+'"/>'+
+    '<g stroke="'+C.green+'" stroke-width="2">'+
+    '<line x1="286" y1="48" x2="332" y2="72"/><line x1="332" y1="72" x2="380" y2="50"/>'+
+    '<line x1="286" y1="48" x2="300" y2="100"/><line x1="300" y1="100" x2="332" y2="72"/>'+
+    '<line x1="332" y1="72" x2="360" y2="108"/><line x1="300" y1="100" x2="360" y2="108"/>'+
+    '<line x1="380" y1="50" x2="360" y2="108"/><line x1="300" y1="100" x2="322" y2="122"/>'+
+    '<line x1="360" y1="108" x2="322" y2="122"/></g>'+
+    '<g fill="'+C.navy+'"><circle cx="286" cy="48" r="7"/><circle cx="332" cy="72" r="7"/><circle cx="380" cy="50" r="7"/>'+
+    '<circle cx="300" cy="100" r="7"/><circle cx="360" cy="108" r="7"/><circle cx="322" cy="122" r="7"/></g></g>'+
+    S.txt(331,146,'COMPLEX',{size:12.5,w:700,fill:C.navy})+
+    S.txt(331,167,'Too many interacting variables',{size:11,fill:C.lav})+
+    S.txt(331,183,'Managed, not solved',{size:11,fill:C.lav})+S.close,
+  panels:{
+    cated:["Complicated — there is a recipe","An isolated lisp in a typically developing seven-year-old. A well-defined problem with a known intervention and a predictable path. University teaches this beautifully."],
+    plex:["Complex — no recipe exists","Autism plus ADHD plus a stressed household plus an under-resourced school plus three other providers. Change one thing and four others move. You recognise the system, try something, watch, adapt. Most of the caseload lives here."]},
+  foot:"The clinical error is applying complicated thinking to a complex child, then feeling like a failure when the recipe does not work."};
+
+var DIA_ASSESS={
+  svg:S.open('0 0 420 262')+
+    S.txt(210,12,'TELLS YOU WHERE THEY ARE',{size:9.5,w:700,fill:C.lav})+
+    S.txt(210,256,'TELLS YOU WHAT WILL HELP',{size:9.5,w:700,fill:C.lav})+
+    '<g class="hot" data-h="std"><rect x="26" y="26" width="168" height="92" rx="10" fill="'+C.s1+'"/></g>'+
+    S.txt(110,62,'Standardised',{size:14,w:700,fill:C.navy,serif:1})+S.txt(110,84,'Scores, percentiles',{size:11,fill:C.lav})+
+    S.txt(110,100,'Good for eligibility',{size:11,fill:C.lav})+
+    '<g class="hot" data-h="crit"><rect x="226" y="26" width="168" height="92" rx="10" fill="'+C.s2+'"/></g>'+
+    S.txt(310,62,'Criterion-referenced',{size:14,w:700,fill:C.navy,serif:1})+S.txt(310,84,'Can they do this thing,',{size:11,fill:C.lav})+
+    S.txt(310,100,'yes or no',{size:11,fill:C.lav})+
+    '<g class="hot" data-h="func"><rect x="26" y="142" width="168" height="92" rx="10" fill="'+C.s3+'"/></g>'+
+    S.txt(110,176,'Functional',{size:14,w:700,fill:C.navy,serif:1})+S.txt(110,198,'What happens in real life.',{size:11,fill:C.greenDp})+
+    S.txt(110,214,'What the NDIS wants',{size:11,fill:C.greenDp})+
+    '<g class="hot" data-h="dyn"><rect x="226" y="142" width="168" height="92" rx="10" fill="'+C.navy+'"/></g>'+
+    S.txt(310,176,'Dynamic',{size:14,w:700,fill:'#fff',serif:1})+S.txt(310,198,'Give a cue. Does it change?',{size:11,fill:C.greenBr})+
+    S.txt(310,214,'Predicts response',{size:11,fill:C.greenBr})+S.close,
+  panels:{
+    std:["Standardised","A number against a norm. Useful for eligibility, funding and flagging severity. It tells you where a child sits on a curve. It does not tell you what to do on Monday, and it goes badly wrong when the norms were not built for this child."],
+    crit:["Criterion-referenced","Can they do this specific thing? Straightforward, repeatable, and easy to explain to a parent. Good for tracking a target you have chosen — less good for finding the target in the first place."],
+    func:["Functional and observational","What actually happens at the dinner table, on the mat, in the playground. Georgia's point: the NDIS is looking for functional impact, so this is often your strongest evidence — not your weakest. Write it up properly and it carries a report."],
+    dyn:["Dynamic","Give a cue, a model or a support and watch what changes. This is the one that tells you whether intervention will work, and roughly how hard it will be. Chronically under-used by new grads because it does not produce a number."]},
+  foot:"The two at the bottom answer \"what should I do?\" The two at the top answer \"how far behind is she?\""};
+
+var DIA_DRIVER={
+  svg:S.open('0 0 420 244')+
+    '<g class="hot" data-h="p"><path d="M210 14 L286 88 L134 88 Z" fill="'+C.navy+'"/></g>'+
+    S.txt(210,68,'PRIMARY',{size:12,w:700,fill:'#fff'})+
+    '<g class="hot" data-h="s"><path d="M130 94 L290 94 L330 162 L90 162 Z" fill="'+C.green+'"/></g>'+
+    S.txt(210,134,'SECONDARY',{size:12,w:700,fill:C.navy})+
+    '<g class="hot" data-h="b"><path d="M86 168 L334 168 L374 234 L46 234 Z" fill="'+C.s2+'"/></g>'+
+    S.txt(210,207,'BACKGROUND',{size:12,w:700,fill:C.navy})+
+    S.txt(400,60,'act',{size:11.5,w:700,fill:C.navy,a:'end',serif:1})+
+    S.txt(400,132,'note',{size:11.5,w:700,fill:C.greenDp,a:'end',serif:1})+
+    S.txt(400,206,'accept',{size:11.5,w:700,fill:C.lav,a:'end',serif:1})+S.close,
+  panels:{
+    p:["Primary driver","The one thing most limiting participation right now. This is what you treat. There is normally exactly one, and finding it is the whole skill."],
+    s:["Secondary contributors","Real, and they matter — but they are not the current bottleneck. Note them, monitor them, come back to them. Do not spread your dose across them."],
+    b:["Background factors","Present, relevant to understanding the child, and not modifiable in this episode of care. Diagnosis, family circumstances, history. Accept and work around."]},
+  foot:"The question is never \"which of these exist\" but \"which one, if it changed, would move the outcome most?\""};
+
+var DIA_PATH={
+  svg:S.open('0 0 460 300')+S.arrow+
+    '<rect x="150" y="8" width="160" height="38" rx="9" fill="'+C.navy+'"/>'+
+    S.txt(230,32,'Functional problem',{size:13,w:700,fill:'#fff',serif:1})+
+    '<line x1="230" y1="46" x2="230" y2="66" stroke="'+C.lav+'" stroke-width="2" marker-end="url(#ah)"/>'+
+    '<rect x="132" y="70" width="196" height="38" rx="9" fill="'+C.indigo+'"/>'+
+    S.txt(230,94,'Where is the mismatch?',{size:13,w:700,fill:'#fff',serif:1})+
+    S.txt(230,124,'CHILD · ENVIRONMENT · ACTIVITY',{size:10,w:700,fill:C.lav})+
+    '<line x1="230" y1="132" x2="230" y2="150" stroke="'+C.lav+'" stroke-width="2" marker-end="url(#ah)"/>'+
+    '<g class="hot" data-h="child"><rect x="10" y="156" width="132" height="44" rx="9" fill="'+C.s3+'"/></g>'+
+    S.txt(76,176,'Child-directed',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(76,191,'build their skill',{size:10.5,fill:C.greenDp})+
+    '<g class="hot" data-h="partner"><rect x="156" y="156" width="132" height="44" rx="9" fill="'+C.s3d+'"/></g>'+
+    S.txt(222,176,'Partner-directed',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(222,191,'change the adults',{size:10.5,fill:C.greenDp})+
+    '<g class="hot" data-h="env"><rect x="302" y="156" width="148" height="44" rx="9" fill="'+C.s1+'"/></g>'+
+    S.txt(376,176,'Environmental',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(376,191,'change the setting',{size:10.5,fill:C.lav})+
+    '<g class="hot" data-h="aac"><rect x="10" y="210" width="132" height="44" rx="9" fill="'+C.s2+'"/></g>'+
+    S.txt(76,230,'Compensatory',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(76,245,'another route / AAC',{size:10.5,fill:C.lav})+
+    '<g class="hot" data-h="mon"><rect x="156" y="210" width="132" height="44" rx="9" fill="'+C.orangeT+'"/></g>'+
+    S.txt(222,230,'Monitor',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(222,245,'with a date',{size:10.5,fill:'#8A6410'})+
+    '<g class="hot" data-h="ref"><rect x="302" y="210" width="148" height="44" rx="9" fill="'+C.s4+'"/></g>'+
+    S.txt(376,230,'Refer or co-treat',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(376,245,'see Workshop 6',{size:10.5,fill:C.lav})+
+    '<rect x="90" y="268" width="280" height="26" rx="13" fill="'+C.greenBr+'"/>'+
+    S.txt(230,285,'Then: dose · setting · review point',{size:11.5,w:700,fill:C.navy})+S.close,
+  panels:{
+    child:["Child-directed","Build the child's own skill. Fits when dynamic assessment showed modifiability and the child is engaged and regulated. The default new grads reach for — sometimes correctly."],
+    partner:["Partner-directed","Change what parents, educators and aides do. Fits when adult behaviour is the bottleneck, or when gains keep evaporating outside your room. Frequently the highest-yield option and the least chosen."],
+    env:["Environmental","Change the classroom, the routine, the noise, the visual supports. Fits when the driver sits outside the child and the setting can actually be changed. Cheap, fast, and often ignored because it does not feel like therapy."],
+    aac:["Compensatory / AAC","Function by another route. Fits when the gap between capacity and demand will not close in a useful timeframe. Not a last resort and not a failure — and it does not suppress speech."],
+    mon:["Monitor","Nothing yet, with a review date and stated triggers written down. This is a real clinical decision when uncertainty is genuine and the cost of waiting is bounded. It is not a decision when it means \"I'm not sure so I'll see them again in a month\"."],
+    ref:["Refer or co-treat","Outside scope, outside competence, or simply not the most useful thing for this family right now. Workshop 6 covers this properly."]},
+  foot:"Same functional problem, different driver, different pathway — that is the whole point. Most plans are a blend; name which one carries the load."};
+
+var DIA_STAGES=(function(){
+  var nodes=[["pre","Pre",230,34],["con","Contem",352,96],["prep","Prep",352,196],
+    ["act","Action",230,258],["main","Maint",108,196],["rel","Relapse",108,96]];
+  var g='<circle cx="230" cy="146" r="86" fill="none" stroke="'+C.s2+'" stroke-width="3" stroke-dasharray="5 7"/>',lbl='';
+  nodes.forEach(function(n,i){
+    g+='<g class="hot" data-h="'+n[0]+'"><circle cx="'+n[2]+'" cy="'+n[3]+'" r="31" fill="'+(i%2?C.indigo:C.navy)+'"/></g>';
+    lbl+=S.txt(n[2],n[3]+4,n[1],{size:11,w:700,fill:'#fff'});
+  });
+  return {svg:S.open('0 0 460 300')+g+lbl+
+    S.txt(230,140,'Match your task',{size:13,w:700,fill:C.navy,serif:1})+
+    S.txt(230,158,'to where they are',{size:13,w:700,fill:C.navy,serif:1})+
+    S.txt(230,292,'Applying the same approach at every stage is the fastest route to disengagement',{size:10,fill:C.lav})+S.close,
+  panels:{
+    pre:["Precontemplation","They do not see a problem. Your task is to raise awareness without pushing — one honest observation, then stop. Arguing here creates resistance, every time."],
+    con:["Contemplation","They can see it and are ambivalent. Your task is to explore both sides and let them voice the reasons for change. Do not resolve it for them."],
+    prep:["Preparation","They are leaning in and looking for a way. Your task is options, not persuasion. Make change concrete and small."],
+    act:["Action","They are doing it. Your task is support, troubleshooting and making it easier — this is where the four laws earn their keep."],
+    main:["Maintenance","It has become normal. Your task is to build durability and plan for the weeks that go badly, before they go badly."],
+    rel:["Relapse","Normal, expected, and not a failure. Your task is to normalise it and re-enter without shame. If they feel judged here, they disengage entirely."]},
+  foot:"Most new grads deliver Action-stage advice to a Precontemplation parent, then wonder why nothing happened."};
+})();
+
+var DIA_MISC={
+  svg:S.open('0 0 460 194')+
+    S.txt(230,18,'HOW HARD IS THIS BELIEF?',{size:10,w:700,fill:C.lav})+
+    '<g class="hot" data-h="gap"><rect x="10" y="30" width="102" height="88" rx="10" fill="'+C.s1+'"/>'+
+    '<g fill="'+C.mid+'"><circle cx="42" cy="66" r="4"/><circle cx="66" cy="84" r="4"/><circle cx="86" cy="60" r="4"/></g></g>'+
+    S.txt(61,138,'Missing bits',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(61,155,'fill the gap',{size:10.5,fill:C.lav})+
+    '<g class="hot" data-h="grain"><rect x="122" y="30" width="102" height="88" rx="10" fill="'+C.s2+'"/>'+
+    '<g fill="'+C.lav+'"><circle cx="150" cy="70" r="4.5"/><circle cx="163" cy="82" r="4.5"/><circle cx="176" cy="64" r="4.5"/>'+
+    '<circle cx="189" cy="80" r="4.5"/><circle cx="200" cy="68" r="4.5"/></g></g>'+
+    S.txt(173,138,'Single grain',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(173,155,'correct and move on',{size:10.5,fill:C.lav})+
+    '<g class="hot" data-h="sand"><rect x="234" y="30" width="102" height="88" rx="10" fill="'+C.mid+'"/>'+
+    '<path d="M258 96 L285 56 L312 96 Z" fill="'+C.indigo+'"/><rect x="252" y="96" width="66" height="8" rx="2" fill="'+C.indigo+'"/></g>'+
+    S.txt(285,138,'Sandcastle',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(285,155,'rebuild the model',{size:10.5,fill:C.lav})+
+    '<g class="hot" data-h="stone"><rect x="346" y="30" width="104" height="88" rx="10" fill="'+C.navy+'"/>'+
+    '<g stroke="#6F6C9A" stroke-width="1.5"><line x1="358" y1="58" x2="438" y2="58"/><line x1="358" y1="76" x2="438" y2="76"/>'+
+    '<line x1="358" y1="94" x2="438" y2="94"/><line x1="386" y1="44" x2="386" y2="58"/><line x1="410" y1="58" x2="410" y2="76"/>'+
+    '<line x1="378" y1="76" x2="378" y2="94"/><line x1="414" y1="94" x2="414" y2="108"/></g></g>'+
+    S.txt(398,138,'Sandstone',{size:12.5,w:700,fill:C.navy,serif:1})+S.txt(398,155,'needs a story',{size:10.5,fill:C.lav})+
+    S.txt(230,182,'Harder to the right. Matching the strategy to the hardness is the whole skill.',{size:10.5,fill:C.lav})+S.close,
+  panels:{
+    gap:["Missing bits","They do not have a coherent picture yet — there are holes rather than wrong beliefs. Fill the gap with information. This is the easy one and the only one where explaining works on its own."],
+    grain:["Single grain","One simple, unattached belief. \"You shouldn't let her use gestures.\" Not load-bearing. Correct it, move on, do not make a project of it."],
+    sand:["Sandcastle","Several beliefs clumped into a flawed mental model. Arguing the individual grains does nothing, because the structure holds them. You have to rebuild the model — usually with a different explanatory story."],
+    stone:["Sandstone","Cemented, and usually backed by authority: \"our GP said he'd grow out of it\", \"the specialist told us to stop signing.\" Facts bounce off this. It needs a story, an experience that contradicts it, and time. Expect several conversations, not one."]},
+  foot:"The common error is bringing evidence to a sandstone belief — it feels like arguing with the GP, and the parent will side with the GP."};
+
+var DIA_WOT={
+  svg:S.open('0 0 460 250')+
+    '<g class="hot" data-h="hyper"><rect x="10" y="10" width="440" height="62" rx="10" fill="'+C.redT+'"/></g>'+
+    S.txt(230,36,'HYPER-AROUSED',{size:12,w:700,fill:C.red})+
+    S.txt(230,56,'fight, flight, bolting, yelling, biting, laughing wildly',{size:11,fill:'#8A5A50'})+
+    '<g class="hot" data-h="win"><rect x="10" y="80" width="440" height="88" rx="10" fill="'+C.s3+'"/></g>'+
+    S.txt(230,108,'WINDOW OF TOLERANCE',{size:12.5,w:700,fill:C.greenDp})+
+    S.txt(230,128,'available to learn · can tolerate demand · can be wrong without falling apart',{size:11,fill:C.greenDp})+
+    '<path d="M22 148 Q80 138 130 150 T240 148 T350 152 T438 146" fill="none" stroke="'+C.green+'" stroke-width="3"/>'+
+    '<g class="hot" data-h="hypo"><rect x="10" y="176" width="440" height="62" rx="10" fill="'+C.s2+'"/></g>'+
+    S.txt(230,202,'HYPO-AROUSED',{size:12,w:700,fill:C.navy})+
+    S.txt(230,222,'shut down, flat, compliant, silent, "well behaved"',{size:11,fill:C.lav})+S.close,
+  panels:{
+    hyper:["Hyper-aroused","Fight or flight. Bolting, yelling, throwing, biting, giddy silliness. Easy to spot and easy to misread as defiance. Nothing you assess here is valid, and nothing you teach here will stick."],
+    win:["The window","Regulated and available. This is the only band where assessment gives you real data and where learning happens. Your job in the first five minutes of every session is to get the child here and keep them here."],
+    hypo:["Hypo-aroused","Shut down. Flat, silent, passive, compliant. This is the dangerous one, because it looks like good behaviour — and a quiet child in a session often gets recorded as a valid low result."]},
+  foot:"If you take one thing from this hour: a dysregulated child gives you a floor, not a ceiling."};
+
+var DIA_FUNC={
+  svg:S.open('0 0 420 240')+
+    '<g class="hot" data-h="esc"><rect x="14" y="14" width="188" height="98" rx="10" fill="'+C.s1+'"/></g>'+
+    S.txt(108,54,'ESCAPE',{size:14,w:700,fill:C.navy,serif:1})+S.txt(108,78,'get me out of this',{size:11.5,fill:C.body})+
+    S.txt(108,96,'task too hard, too long, too loud',{size:10.5,fill:C.lav})+
+    '<g class="hot" data-h="att"><rect x="218" y="14" width="188" height="98" rx="10" fill="'+C.s2+'"/></g>'+
+    S.txt(312,54,'ATTENTION',{size:14,w:700,fill:C.navy,serif:1})+S.txt(312,78,'notice me',{size:11.5,fill:C.body})+
+    S.txt(312,96,'any attention beats none',{size:10.5,fill:C.lav})+
+    '<g class="hot" data-h="acc"><rect x="14" y="126" width="188" height="98" rx="10" fill="'+C.s3+'"/></g>'+
+    S.txt(108,166,'ACCESS',{size:14,w:700,fill:C.navy,serif:1})+S.txt(108,190,'I want that thing',{size:11.5,fill:C.greenDp})+
+    S.txt(108,208,'and I cannot ask for it',{size:10.5,fill:C.greenDp})+
+    '<g class="hot" data-h="sen"><rect x="218" y="126" width="188" height="98" rx="10" fill="'+C.s3d+'"/></g>'+
+    S.txt(312,166,'SENSORY',{size:14,w:700,fill:C.navy,serif:1})+S.txt(312,190,'this feels wrong / right',{size:11.5,fill:C.greenDp})+
+    S.txt(312,208,'regulating, not communicating',{size:10.5,fill:C.greenDp})+S.close,
+  panels:{
+    esc:["Escape","The behaviour ends something. Too hard, too long, too loud, too unpredictable. If escape is the function, the fix is almost always in the demand — shorten it, scaffold it, signal the end of it. Punishing escape just raises the stakes."],
+    att:["Attention","The behaviour brings a person closer. Worth noticing that a child who only gets adult attention when things go wrong has learned something entirely rational. The fix is attention that is free and frequent, not attention withheld."],
+    acc:["Access","The behaviour gets an object or an activity. This is the most common one in our caseload and the most directly ours: a child who cannot request is a child who will take, grab or scream. Build the request."],
+    sen:["Sensory","The behaviour does a job for the nervous system. It is not a message to anyone. Trying to extinguish it removes a regulation strategy and gives nothing back. This is usually where OT belongs alongside you."]},
+  foot:"The question is never \"how do I stop this?\" but \"what is this getting them, and is there a better route to the same thing?\""};
+
+var DIA_SCOPE={
+  svg:S.open('0 0 440 250')+
+    '<g class="hot" data-h="scope"><circle cx="168" cy="118" r="98" fill="'+C.s2+'"/></g>'+
+    '<g class="hot" data-h="comp"><circle cx="272" cy="118" r="98" fill="'+C.s3+'" fill-opacity=".92"/></g>'+
+    '<g class="hot" data-h="both"><path d="M220 38 A98 98 0 0 0 220 198 A98 98 0 0 0 220 38 Z" fill="'+C.navy+'"/></g>'+
+    S.txt(110,114,'SCOPE',{size:12.5,w:700,fill:C.navy})+S.txt(110,132,'of the profession',{size:10.5,fill:C.lav})+
+    S.txt(332,114,'COMPETENCE',{size:12.5,w:700,fill:C.navy})+S.txt(332,132,'what I can do well',{size:10.5,fill:C.greenDp})+
+    S.txt(220,113,'DO IT',{size:13,w:700,fill:'#fff',serif:1})+S.txt(220,131,'this is yours',{size:10,fill:C.greenBr})+
+    S.txt(220,240,'Scope changes rarely. Competence changes constantly — and differs between you and the person next to you.',{size:10.5,fill:C.lav})+S.close,
+  panels:{
+    scope:["In scope, not yet competent","Speech pathology does this. You cannot yet. Options: get supervision, get PD, co-treat, or hand it to a colleague who can. All four are professional. Pretending is not."],
+    comp:["Competent, but out of scope","You may be good at it. It is still not yours. This comes up most with mental health, behaviour support and anything medical — the referral pathway exists for a reason."],
+    both:["In scope and competent","Do it. And notice that this circle grows over time, which is the entire point of supervision."]},
+  foot:"There is a third question people forget: is this the most useful thing for this family right now?"};
+
+var DIA_FEED={
+  svg:S.open('0 0 460 296')+S.arrow+
+    '<rect x="120" y="8" width="220" height="42" rx="9" fill="'+C.navy+'"/>'+
+    S.txt(230,27,'Feeding concern raised',{size:13,w:700,fill:'#fff',serif:1})+
+    S.txt(230,42,'run the screen first',{size:10,fill:C.greenBr})+
+    '<line x1="230" y1="50" x2="230" y2="68" stroke="'+C.lav+'" stroke-width="2" marker-end="url(#ah)"/>'+
+    '<g class="hot" data-h="safe"><rect x="94" y="72" width="272" height="44" rx="9" fill="'+C.redT+'"/></g>'+
+    S.txt(230,92,'Any safety or growth red flag?',{size:12.5,w:700,fill:C.red,serif:1})+
+    S.txt(230,108,'coughing · chest infections · faltering growth · tube',{size:10,fill:'#8A5A50'})+
+    '<line x1="230" y1="116" x2="230" y2="134" stroke="'+C.lav+'" stroke-width="2" marker-end="url(#ah)"/>'+
+    '<g class="hot" data-h="us"><rect x="14" y="138" width="140" height="64" rx="9" fill="'+C.s3+'"/></g>'+
+    S.txt(84,162,'1. What can we do?',{size:12,w:700,fill:C.navy,serif:1})+
+    S.txt(84,179,'environment, pacing,',{size:10,fill:C.greenDp})+S.txt(84,192,'pressure, graded exposure',{size:10,fill:C.greenDp})+
+    '<g class="hot" data-h="with"><rect x="160" y="138" width="140" height="64" rx="9" fill="'+C.s2+'"/></g>'+
+    S.txt(230,162,'2. Who joins us?',{size:12,w:700,fill:C.navy,serif:1})+
+    S.txt(230,179,'dietetics · OT ·',{size:10,fill:C.lav})+S.txt(230,192,'psychology',{size:10,fill:C.lav})+
+    '<g class="hot" data-h="not"><rect x="306" y="138" width="140" height="64" rx="9" fill="'+C.s4+'"/></g>'+
+    S.txt(376,162,'3. What is not ours?',{size:12,w:700,fill:C.navy,serif:1})+
+    S.txt(376,179,'swallow safety, growth,',{size:10,fill:C.lav})+S.txt(376,192,'tube, organic cause',{size:10,fill:C.lav})+
+    '<rect x="60" y="222" width="340" height="60" rx="10" fill="'+C.greenBr+'"/>'+
+    S.txt(230,245,'Fussy eating is not a diagnosis',{size:14,w:700,fill:C.navy,serif:1})+
+    S.txt(230,263,'It is a presentation. Underneath is delayed oral sensory',{size:10.5,fill:C.navy})+
+    S.txt(230,276,'development, or an organic cause.',{size:10.5,fill:C.navy})+S.close,
+  panels:{
+    safe:["Safety first, always","Coughing or wet voice at meals, recurrent chest infections, faltering growth or weight loss, tube feeding or a history of it. Any one of these changes your timeframe from weeks to days and means medical review before any feeding program."],
+    us:["Step one — what can we do?","Environment, positioning, pacing, reducing pressure, routine, graded exposure, building outward from accepted foods. Responsive feeding principles are the starting point in most cases, and reducing pressure often does more than anything else you will try."],
+    with:["Step two — who joins us?","Dietetics for nutritional adequacy. OT for seating, positioning and sensory profile. Psychology where anxiety or trauma dominates. Adding someone is not handing over."],
+    not:["Step three — what is not ours?","Any swallow safety concern, faltering growth, tube feeding and weaning, or an organic cause that has not been investigated. External feeding PD is good and knowing you need it is part of competence, not a gap to hide."]},
+  foot:"Angela to finalise this section against her current PD."};
+
+/* ===================== WIDGETS ===================== */
+var UID=0; function uid(){return 'u'+(++UID)}
+var ICON={diagram:'◆',sort:'⇄',quiz:'?',scale:'≡',compare:'⇆',cards:'▦',check:'✓',steps:'⋮'};
+var DIAS={},SORTS={},QUIZ={},SCALES={},SORTEX={};
+
+function wshell(kind,title,hint,body){
+  return '<div class="w"><div class="w-head"><div class="ico">'+(ICON[kind]||'◆')+'</div>'+
+    '<div class="ttl">'+title+'</div><div class="hint">'+(hint||'')+'</div></div>'+
+    '<div class="w-body">'+body+'</div></div>';
+}
+function wDiagram(b){
+  var id=uid(),d=b.d; DIAS[id]=d.panels;
+  var body='<div class="dia" data-dia="'+id+'"><div>'+
+    '<div class="dia-frame"><div class="in">'+d.svg+'</div></div>'+
+    (d.foot?'<p class="dia-foot">'+d.foot+'</p>':'')+'</div>'+
+    '<div class="dia-panel" id="dp-'+id+'"><p class="ph">Click a part of the diagram to read about it.</p></div></div>';
+  return wshell('diagram',b.title,b.hint||'Click the diagram',body);
+}
+function wCards(b){
+  return wshell('cards',b.title,b.hint||'Tap each card','<div class="cgrid">'+b.items.map(function(c){
+    return '<div class="fc"><div class="f">'+c[0]+'</div><div class="tapme">tap to reveal</div><div class="b">'+c[1]+'</div></div>';
+  }).join('')+'</div>');
+}
+function wSort(b){
+  var id=uid(); SORTS[id]={items:b.items,buckets:b.buckets}; SORTEX[id]=b.e||'';
+  var body='<div class="legend">'+
+    '<span><i class="sw" style="background:'+C.s2+'"></i>'+b.buckets[0]+'</span>'+
+    '<span><i class="sw" style="background:'+C.s3+'"></i>'+b.buckets[1]+'</span>'+
+    '<span>Tap a chip to move it</span></div>'+
+    '<div class="chips" data-sort="'+id+'">'+b.items.map(function(it,i){
+      return '<button class="chip" data-i="'+i+'" data-b="0"><span class="bk">?</span>'+it[0]+'</button>';
+    }).join('')+'</div>'+
+    '<button class="btn ghost" data-sortcheck="'+id+'">Check answers</button>'+
+    '<div class="expl" id="se-'+id+'"></div>';
+  return wshell('sort',b.title,b.hint||'Sort them',body);
+}
+function wQuiz(b){
+  return wshell('quiz',b.title,b.hint||'Pick one',b.items.map(function(q){
+    var id=uid(); QUIZ[id]={a:q.a};
+    return '<div class="q-item" data-q="'+id+'"><div class="stem">'+q.q+'</div><div class="opts">'+
+      q.o.map(function(o,i){return '<button class="opt" data-oi="'+i+'"><span class="mk">'+
+        String.fromCharCode(65+i)+'</span>'+o+'</button>'}).join('')+
+      '</div><div class="expl" id="qe-'+id+'">'+q.e+'</div></div>';
+  }).join(''));
+}
+function wScale(b){
+  var id=uid(); SCALES[id]=b;
+  return wshell('scale',b.title,b.hint||'Drag the sliders','<div data-scale="'+id+'">'+b.rows.map(function(r,i){
+    return '<div class="sc-row"><label>'+r+'</label><input type="range" min="0" max="10" value="5" data-si="'+i+'">'+
+      '<div class="v" data-sv="'+i+'">5</div></div>';
+  }).join('')+'<div class="sc-out" id="so-'+id+'"></div></div>');
+}
+function wCompare(b){
+  var id=uid();
+  return wshell('compare',b.title,b.hint||'Switch between them',
+    '<div class="cmp-tabs" data-cmp="'+id+'">'+b.panes.map(function(p,i){
+      return '<button data-ci="'+i+'"'+(i===0?' class="on"':'')+'>'+p.label+'</button>'}).join('')+'</div>'+
+    b.panes.map(function(p,i){
+      return '<div class="cmp-pane'+(i===0?' on':'')+'" data-cp="'+id+'-'+i+'">'+
+        '<div class="box '+(p.tone||'')+'">'+p.body+'</div>'+(p.why?'<div class="why">'+p.why+'</div>':'')+'</div>';
+    }).join(''));
+}
+function wCheck(b){
+  var id=uid();
+  return wshell('check',b.title,b.hint||'Tick as you go','<div data-ck="'+id+'">'+b.items.map(function(it){
+    return '<div class="ck"><div class="bx"></div><div class="tx"><b>'+it[0]+'</b>'+(it[1]?'<small>'+it[1]+'</small>':'')+'</div></div>';
+  }).join('')+'<div class="ck-count" id="cc-'+id+'">0 of '+b.items.length+'</div></div>');
+}
+function wSteps(b){
+  return wshell('steps',b.title,b.hint||'Open each step',b.items.map(function(s,i){
+    return '<div class="step"><div class="step-h"><div class="n">'+(i+1)+'</div><div class="t">'+s[0]+'</div>'+
+      '<div class="ar">›</div></div><div class="step-b">'+s[1]+'</div></div>';
+  }).join(''));
+}
+function wTable(b){
+  return '<table class="g"><thead><tr>'+b.head.map(function(h){return '<th>'+h+'</th>'}).join('')+
+    '</tr></thead><tbody>'+b.rows.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+c+'</td>'}).join('')+'</tr>'}).join('')+
+    '</tbody></table>';
+}
+
+var SECN=0;
+function block(b){
+  if(b.h){SECN++;return '<h3 class="sec"><span class="badge">'+SECN+'</span>'+b.h+'</h3>'+(b.p?'<p class="sub">'+b.p+'</p>':'')}
+  switch(b.t){
+    case 'diagram':return wDiagram(b);
+    case 'cards':return wCards(b);
+    case 'sort':return wSort(b);
+    case 'quiz':return wQuiz(b);
+    case 'scale':return wScale(b);
+    case 'compare':return wCompare(b);
+    case 'check':return wCheck(b);
+    case 'steps':return wSteps(b);
+    case 'table':return wTable(b);
+    case 'bar':return '<div class="bar'+(b.navy?' navy':'')+'"><span class="lbl">'+(b.lbl||'The one thing')+'</span>'+b.body+'</div>';
+    case 'note':return '<div class="note '+(b.tone||'')+'">'+b.body+'</div>';
+    default:return (b.items?'<ul class="t">'+b.items.map(function(i){return '<li>'+i+'</li>'}).join('')+'</ul>':'')+
+                   (b.p?'<p class="sub">'+b.p+'</p>':'');
+  }
+}
+
+var RUN=[["0–5","Check in, run the self-check"],["5–15","Put the concept on the table — use the diagram"],
+  ["15–35","Work the interactive sections and the prompts"],["35–55","One case study"],["55–60","Close: what changes this fortnight?"]];
+function runsheet(){
+  return '<table class="g run"><thead><tr><th>Min</th><th>What happens</th></tr></thead><tbody>'+
+    RUN.map(function(r){return '<tr><td class="t">'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('')+'</tbody></table>';
+}
+
+/* ===================== MODULE CONTENT ===================== */
+var MODULES=[
+{id:"w1",n:1,title:"Foundations and Your Team",
+ q:"What do we believe here, and who do I go to for what?",
+ blurb:"The PACE philosophy, seeing the whole child, and how to navigate the organisation.",
+ lede:"What we believe about children and families here, and how to find your way around the place.",
+ objectives:["Describe the PACE philosophy and the speech pathologist's role in it",
+  "Apply a biopsychosocial lens instead of hunting for a single cause",
+  "Tell a complicated presentation from a complex one",
+  "Say who they go to for what, and make an internal referral",
+  "Explain why their own workload is a clinical issue, not a personal one"],
+ blocks:[
+  {h:"Why we look at the whole child",p:"Difficulty comes from the interaction of the child, their partners, the environment and the demand. Not from one broken part."},
+  {t:"diagram",title:"The layered model",d:DIA_LAYERS},
+  {t:"compare",title:"The same child, two ways of looking",panes:[
+   {label:"Impairment only",tone:"bad",body:"<b>Leo, 3.</b> Expressive language delay. Twenty words against an expected 200+. Recommend weekly therapy targeting vocabulary expansion. Review in twelve weeks.",
+    why:"Everything here is true. It also gives you nothing to do differently, tells you nothing about why the last twelve weeks did not work, and is unlikely to survive contact with a family who cannot do the home program."},
+   {label:"Whole child",tone:"good",body:"<b>Leo, 3.</b> Twenty words. His mother works night shifts and has three children under six — home practice has not been possible, and she apologises every session. Leo's older sister answers for him constantly. He is in family day care with a carer who is warm but does not wait. His mother believes therapy is something that happens in our room.",
+    why:"Same child. Now there are four things you could change, and only one of them is Leo's vocabulary. This is the version that tells you what to do on Monday."}]},
+  {h:"Complicated or complex?"},
+  {t:"diagram",title:"Two kinds of hard",d:DIA_CPLX},
+  {t:"sort",title:"Sort these referrals",buckets:["Complicated","Complex"],
+   items:[["Interdental lisp, 7yo, no other concerns",1],["Stutter onset 3 months ago, 4yo, no other concerns",1],
+    ["ASD + ADHD, school pushing compliance goals, exhausted parent",2],["Grommets last year, mild speech errors, noisy classroom",2],
+    ["Late talker, 2yo, parents disagree about waiting",2],["/s/ and /z/ errors, motivated 8yo, engaged parent",1],
+    ["DLD + literacy failure + refusing school",2]],
+   e:"There is room to argue about the stutter and the grommets — and that argument is the useful part of the exercise. The point is not the answer. It is noticing that most of what walks in the door is not the kind of problem university prepared you for."},
+  {h:"Ethics: who is the client?"},
+  {t:"quiz",title:"Three quick calls",items:[
+   {q:"A parent wants speech clarity. The school wants him to sit still. He wants to be left alone. Whose goal do you work on?",
+    o:["The parent's — they consented and they pay","The school's — that is where he spends his day","Start with his, and negotiate the others around it"],a:2,
+    e:"His interests are the thing you are actually obliged to. That does not mean the parent is ignored — it means you find the version of their goal that he would also want. A goal a child cannot see the point of will not be worked on, no matter who signed the form."},
+   {q:"A nine-year-old refuses the activity every week. What is that?",
+    o:["Non-compliance to be managed","Clinical data about your plan","Something for the parent to address at home"],a:1,
+    e:"Consent is the parent's. Assent is the child's, and it still counts. Persistent refusal is the clearest feedback you will get about whether the plan fits."},
+   {q:"A family has spent $4,000 on an intensive program with no evidence base and asks what you think.",
+    o:["Say nothing — it is their money and their choice","Tell them plainly it does not work","Be honest about the evidence, and about what you can and cannot offer"],a:2,
+    e:"Autonomy and informed consent both require them to actually have the information. Staying silent to keep the relationship comfortable is not respecting autonomy — it is avoiding a hard conversation. Being blunt without acknowledging why they did it will just end the relationship."}]},
+  {h:"Your team, and who to go to"},
+  {t:"quiz",title:"Who do you go to?",hint:"Five quick ones",items:[
+   {q:"Two clients booked into the same slot on Thursday.",o:["Katie","Your supervisor","Mark"],a:0,e:"Katie. Bookings, calendar, initial appointments and admin all sit with her."},
+   {q:"You are not sure whether to refer a child for an autism assessment.",o:["Katie","Your supervisor","Mark"],a:1,e:"Your clinical supervisor — Georgia for the Peninsula and south-east, Angela for Reservoir and the north."},
+   {q:"A parent has made a formal complaint about a session.",o:["Katie","Your supervisor","Mark"],a:2,e:"Mark. Serious issues and escalations go up."},
+   {q:"You think a child may need OT.",o:["Katie","Internal referral process","Ring an OT you know"],a:1,e:"Use the internal referral process, so it is tracked and allocated. Ringing someone you happen to know works right up until they go on leave."},
+   {q:"You are three weeks behind on reports and starting to dread Mondays.",o:["Push through, it will pass","Your supervisor","Mark"],a:1,e:"Your supervisor, and sooner than you want to. This is a caseload and workload conversation, and it is exactly what supervision is for."}]},
+  {t:"bar",lbl:"The one thing",body:"Ask every family who else is in their care team. At intake, every time — and again at six months, because it changes."},
+  {h:"Looking after yourself is part of the job",p:"Tired clinicians miss information, over-service, avoid hard conversations and lose confidence. This is a performance issue before it is a wellbeing one."},
+  {t:"scale",title:"The self-check",hint:"0 is dire, 10 is great",
+   rows:["Workload","Stress management","Sleep quality","Diet and hydration","Life outside work"],
+   bands:[[0,3,"That is a supervision conversation today, not next month. Pick the lowest one and name what would move it by two points.",'#F7E9E6'],
+    [4,6,"Middling. Worth watching which one is dragging the others down — for most people it is sleep or workload, and they are usually the same problem.",'#FAF2E2'],
+    [7,10,"Good place to be. Note what is working, because you will want to know when it stops.",'#E3F0D2']]},
+  {t:"cards",title:"Three things that are not the same",items:[
+   ["Burnout","Chronic-stress exhaustion. Comes from workload, demand and lack of control. It builds slowly and you usually notice it after everyone else has."],
+   ["Compassion fatigue","The erosion of empathy and the capacity to refuel. You still care, you just cannot find it in the room any more. Common in high-need caseloads."],
+   ["Vicarious trauma","Cumulative harm from indirect exposure to other people's trauma — disclosures, case files, safeguarding concerns. A foreseeable hazard of this work, not an individual weakness."]]}],
+ prompts:["Think of a client where the problem turned out not to be what the referral said. What was actually going on?",
+  "Name something on your caseload that is complicated, and something that is complex. What are you doing differently for each?",
+  "What does \"help people help themselves\" look like in a session with a four-year-old?",
+  "Which layer of that model do you find hardest to work on? Why?",
+  "Where are you right now on the self-check, honestly?"],
+ cases:[
+  {who:"Case A",name:"Mia, 4",tags:["Delay vs disorder","Caregiver disagreement","First session"],
+   body:"Mia has around forty words and is getting increasingly frustrated — she has started hitting when she is not understood. Her father wants to wait and see, because \"all the boys in my family talked late\". Her mother is anxious, has read a great deal online, and has booked assessments with three different providers. Kinder has separately raised that she plays alone and does not join group activities. Both parents are in the room and clearly disagree.",
+   qs:["Where do you start when the two people who have to consent want opposite things?","Is anything here telling you this is more than a late talker?","How do you talk about waiting without dismissing dad or feeding mum's anxiety?","What does a good first session look like — realistically?"],
+   look:"The family system is the immediate obstacle, not Mia's word count. Watch for a new grad who dives straight into assessment planning and never addresses the disagreement — that plan will not survive contact with the parents."},
+  {who:"Case B",name:"Kai, 9",tags:["Complexity","Who is the client","Competing stakeholders"],
+   body:"Kai is autistic with ADHD. He speaks in short phrases and uses a communication app inconsistently. His school has emailed asking for goals on eye contact, sitting still and quiet hands, copying in his mother. His mother is exhausted, has two other children, and told you last week that she just wants him to be normal. Kai has said almost nothing to you in three sessions, but lit up when you found out he knows every train line in Melbourne.",
+   qs:["Who is your client here, and how do you say that out loud to the school?","Which parts of this are complicated and which parts are complex?","How do you decline the school's requested goals without losing the relationship you need with them?","What would you do with the trains?"],
+   look:"The trains are the answer to at least half of this. Look for whether they can hold an affirming position and empathy for an exhausted mother at the same time — collapsing into either one is the common failure."}]},
+
+{id:"w2",n:2,title:"Assessment and Interpretation",
+ q:"Which assessment answers my question, and what do the results actually mean?",
+ blurb:"Expressive, receptive, articulation, oral motor and feeding screening — and how to read results honestly.",
+ lede:"Choosing assessment that answers a question, and working out what the results actually mean.",
+ objectives:["Name the clinical question before choosing an assessment",
+  "Select and interpret expressive, receptive and articulation assessment",
+  "Explain when an oral motor exam is used and what changes based on the result",
+  "Run a feeding screen and know it is a screen, not an assessment",
+  "Use observational and dynamic assessment, and explain why NDIS work needs functional data",
+  "Distinguish difference from disorder","Explain a result to a parent in plain language"],
+ blocks:[
+  {h:"Four kinds of assessment, two kinds of answer"},
+  {t:"diagram",title:"What each one actually tells you",d:DIA_ASSESS},
+  {t:"quiz",title:"Which assessment answers the question?",items:[
+   {q:"\"Will therapy help this child, and how hard will it be?\"",o:["Standardised battery","Dynamic assessment","Criterion-referenced checklist"],a:1,
+    e:"Dynamic assessment. Give a cue, a model or a support and watch what changes. Nothing else predicts response to intervention nearly as well, and new grads chronically under-use it because it does not produce a number."},
+   {q:"\"Does she meet criteria for funding support?\"",o:["Standardised battery","Language sample","Teacher report"],a:0,
+    e:"Standardised, because that is the language the system reads. Be honest that this is an administrative question, not a clinical one — and do not let the score become your clinical formulation."},
+   {q:"\"Why can't he join in at lunchtime?\"",o:["Standardised battery","Observation in the playground","Articulation screen"],a:1,
+    e:"Go and watch. The clinic room cannot answer a playground question. This is also exactly the functional evidence an NDIS report needs."},
+   {q:"\"Has anything changed since last term?\"",o:["Re-run the full battery","A baseline you actually chose in advance","Ask the parent"],a:1,
+    e:"Whatever you picked as your measurable marker before you started. If you did not pick one, this question has no good answer — which is the real lesson."}]},
+  {h:"The oral motor exam",p:"It serves both articulation and feeding questions. It is also the most commonly performed assessment that changes nothing."},
+  {t:"quiz",title:"Would you do one?",items:[
+   {q:"Six-year-old with an interdental lisp, otherwise typical.",o:["Yes","No"],a:1,
+    e:"No. What would you do differently based on the result? If the answer is nothing, do not do it. That is the test, every time."},
+   {q:"Three-year-old, very limited sound inventory, drooling, difficulty with textures at meals.",o:["Yes","No"],a:0,
+    e:"Yes. Here it discriminates between drivers — and it informs both the speech question and the feeding question at once. This is the case the exam exists for."},
+   {q:"Nine-year-old, sudden deterioration in speech clarity over six weeks.",o:["Yes, and treat","Yes, and refer","No"],a:1,
+    e:"Examine, but the headline is the sudden onset. Regression or rapid deterioration is a medical question before it is a speech one. Paediatrician, promptly."}]},
+  {t:"bar",lbl:"The one thing",body:"If you would not do anything differently based on the result, do not do the assessment."},
+  {h:"Rule these out before you conclude anything"},
+  {t:"check",title:"The confounds checklist",hint:"Tick what you have actually checked",items:[
+   ["Hearing","Ear infection history, grommets, fluctuating clarity, inattention in noise. The single most common miss."],
+   ["Regulation and fatigue","A dysregulated or exhausted child gives you a floor, not a ceiling. Note the time of day."],
+   ["Language background","First language, exposure, time in Australia. English-normed tests were not built for this child."],
+   ["Vision","Before assuming a reading difficulty is language-based."],
+   ["Attention","Can they attend to anything for the length of your task? If not, your receptive result is not real."],
+   ["Setting","Would this look different at home, at kinder, in the playground? Usually yes."],
+   ["Who was in the room","Parent present, parent answering, sibling interrupting, unfamiliar clinician."]]},
+  {h:"Difference or disorder?"},
+  {t:"compare",title:"A bilingual five-year-old at the first percentile",panes:[
+   {label:"The trap",tone:"bad",body:"Amira scored at the 1st percentile on receptive and expressive language in English. Kinder reports \"no language\". Recommend intensive language intervention and consider a DLD diagnosis.",
+    why:"The test measured her English after eighteen months of exposure. It did not measure her language. Her mother reports she argues with her brother and tells long stories about her cousins — the strongest piece of evidence in the file and the one most likely to be discounted."},
+   {label:"The work",tone:"good",body:"Gather a first-language history through an interpreter. Sample Arabic where possible. Run dynamic assessment: does she pick up new forms with a model? Compare her English trajectory to her exposure, not to a monolingual norm. Then decide.",
+    why:"Difference and disorder look identical on an English test. They look completely different once you have a first-language history and evidence of modifiability."}]},
+  {h:"Explaining it to a parent",p:"Two sentences, no jargon, neither minimising nor catastrophising. This is a skill, not a personality trait — practise it out loud."},
+  {t:"compare",title:"Same result, three deliveries",panes:[
+   {label:"Too technical",tone:"bad",body:"\"She's presenting with a moderate receptive-expressive language disorder, standard score of 71, which puts her below the third percentile, with particular difficulty in morphosyntax and complex sentence comprehension.\"",
+    why:"Accurate and useless. The parent will remember one word from that sentence, and it will be the wrong one."},
+   {label:"Too soft",tone:"bad",body:"\"She's doing really well in lots of ways, there's nothing to worry about at this stage, some kids just take a bit longer, let's keep an eye on it.\"",
+    why:"Kind, and it steals the parent's ability to make an informed decision. It also guarantees a much harder conversation in six months."},
+   {label:"About right",tone:"good",body:"\"Amira understands a lot less than most children her age, and that is making it hard for her to follow what's happening at kinder. The good news is she picked up new words quickly when I gave her a bit of help — so this is something we can work on.\"",
+    why:"Function, honesty, and modifiability. She knows what the problem is, why it matters, and that something can be done."}]},
+  {h:"Feeding — screen only",p:"When feeding comes up in an intake, you screen. You do not assess. The full pathway is Workshop 6."},
+  {t:"cards",title:"The screening questions",items:[
+   ["Birth and medical history","Prematurity, surgery, reflux, allergy, respiratory history. This is where the red flags hide."],
+   ["How many foods?","And critically: is that range widening or narrowing? A narrowing range is the concerning direction."],
+   ["Any coughing or gagging?","At meals, after meals, with particular textures. Wet or gurgly voice after drinking."],
+   ["Growth trajectory","Have they crossed centiles downward? Ask for the blue book."],
+   ["How long do meals take?","And how distressed is everyone by the end of them?"],
+   ["What have they already tried?","And what happened. This tells you more about the family than about the child."]]}],
+ prompts:["What is the clinical question here? Would this assessment answer it?",
+  "When would you do an oral motor exam, and what would you do differently depending on what you found?",
+  "You have thirty minutes with a child who will not sit at the table. What is your assessment plan?",
+  "Give me your two-sentence explanation of this result, as if the parent is sitting right here.",
+  "Your standardised result and the parent report contradict each other. Which do you believe?",
+  "What would make you stop and check hearing before going any further?"],
+ cases:[
+  {who:"Case A",name:"Amira, 5",tags:["Difference vs disorder","Interpreters","Dynamic assessment"],
+   body:"Amira speaks Arabic at home and has been in Australia eighteen months. Kinder reports she has \"no language\" and is worried about school next year. You test in English and she scores at the first percentile on both receptive and expressive measures. Her mother, through an interpreter, says Amira talks constantly at home, argues with her older brother, and tells long stories about her cousins.",
+   qs:["Is this a disorder? What would you need to know to answer that?","What does the first percentile actually mean here?","How would you use dynamic assessment, and what would a positive result look like?","What do you tell kinder, who want a diagnosis so they can apply for support?","How do you brief an interpreter so you get useful information?"],
+   look:"The mother's report is the strongest evidence in the file and the one most likely to be discounted. Watch for over-reliance on the number, and for whether they resist kinder's pressure to label."},
+  {who:"Case B",name:"Charlie, 6",tags:["Screening beyond the referral","Hearing","Environment"],
+   body:"Charlie was referred because he cannot be understood at school. On assessment his speech patterns are mild and broadly age-appropriate. In the history: six ear infections, two sets of grommets, and his mother mentions he \"has days where he is off with the fairies\". He sits at the back of a classroom of 27 with a hard floor and high ceilings. His teacher says he does not follow instructions.",
+   qs:["The referral said speech. What is your actual clinical question now?","What do you do before you write a single speech goal?","How much of this is Charlie and how much is that classroom?","The school wants weekly speech therapy. What do you say?","If audiology comes back normal, what is your next hypothesis?"],
+   look:"Audiology first. The valuable part is watching whether they can hold off treating the thing they were asked to treat. Also worth drawing out that \"does not follow instructions\" has about six possible causes."}]},
+
+{id:"w3",n:3,title:"Clinical Reasoning, Planning and Documentation",
+ q:"What do I target first, and can someone else see why from my notes?",
+ blurb:"Finding the driver, choosing a pathway, planning with contingencies, and writing it up so the reasoning shows.",
+ lede:"Deciding what to target first, and writing it down so the reasoning is visible.",
+ objectives:["Identify the primary driver rather than treating everything at once",
+  "Choose an intervention pathway and justify it","Write a session plan with contingencies",
+  "Set a dose, a setting and a review point, and defend all three",
+  "Write a case note and a report that show the reasoning behind the decision"],
+ blocks:[
+  {h:"Finding the driver"},
+  {t:"diagram",title:"The driver hierarchy",d:DIA_DRIVER},
+  {t:"sort",title:"Charlie, 6 — sort the factors",buckets:["Primary","Secondary / background"],
+   items:[["Fluctuating hearing after 6 ear infections",1],["Mild speech sound errors",2],
+    ["Classroom of 27, hard floor, high ceilings",2],["Sits at the back of the room",2],
+    ["Teacher says he doesn't follow instructions",2],["Diagnosis of nothing in particular",2],["Mum works full time",2]],
+   e:"Hearing is primary — it is the one thing that, if it changed, would move everything else. The classroom is a strong secondary and worth an environmental recommendation. The speech errors are real and are not the reason he is struggling. Note how tempting it is to treat the thing you were referred for."},
+  {h:"Choosing a pathway"},
+  {t:"diagram",title:"From problem to pathway",d:DIA_PATH},
+  {t:"note",body:"<b>Oral-motor or sensory?</b> The same presenting problem needs a different pathway depending on which is driving it. This holds for articulation and for feeding, and it is the clearest worked example of pathway logic in the module."},
+  {h:"Planning the session"},
+  {t:"cards",title:"Contingency cards — what if…",hint:"Have an answer before you walk in",items:[
+   ["He refuses in the first five minutes","Drop the demand, not the session. Move to something he can win at, get him back in the window, and re-enter sideways. Record what preceded the refusal — that is your data."],
+   ["The parent takes over and answers for him","Not a problem to fix in the moment. Give the parent a job that requires them to wait — counting, holding cards, keeping score. Address it properly next session as a coaching target."],
+   ["The sibling comes","Use them. A three-year-old brother is a better communication partner than you are, and watching them together tells you things the table never will."],
+   ["The school room you were promised is gone","Have a corridor plan. Lower the demand, shorten it, and make the point of the visit the teacher conversation instead."],
+   ["Nothing you planned is working","Say so out loud, stop, and spend the time on the parent instead. A session spent working out why the plan is wrong is not a wasted session."],
+   ["He is dysregulated the moment you arrive","Nothing you assess is valid and nothing you teach will stick. Regulate first — see Workshop 5 — and write down that you did."]]},
+  {t:"steps",title:"Dose, setting and review",items:[
+   ["How often, and for how long?","<ul><li>Name a block length and an end point before you start. Open-ended weekly therapy with no review is the default and it is not a decision.</li><li>Minimum effective dose. More sessions is not a clinical rationale, even when the funding is there.</li><li>Plan the break. Blocks with gaps often beat continuous service, and a planned break reads very differently to a family than an unplanned one.</li></ul>"],
+   ["Where should this happen?","<ul><li><b>Clinic</b> buys focus, equipment and a controlled environment.</li><li><b>Home</b> buys routines, real communication partners and carryover.</li><li><b>Kinder or school</b> buys the environment where the problem actually occurs, and the people who can change it.</li><li>Choose deliberately. Do not default to whatever is easiest to book.</li></ul>"],
+   ["When will you know it worked?","<ul><li>Pick the measurable marker before session one, not at the review.</li><li>Set the review date and write it down where the family can see it.</li><li>State in advance what would make you change direction. Otherwise you will keep going out of momentum.</li></ul>"]]},
+  {t:"bar",lbl:"The one thing",body:"Pick the measurable marker and the review date before session one — not at the review."},
+  {h:"Documentation that shows reasoning",p:"A good note makes three things clear: what happened, why it matters, what happens next."},
+  {t:"compare",title:"Same session, two notes",panes:[
+   {label:"The weak note",tone:"bad",body:"<b>S:</b> Mum reports good week.<br><b>O:</b> Worked on /s/ in initial position. 20 trials, 60% accuracy with model.<br><b>A:</b> Improving.<br><b>P:</b> Continue.",
+    why:"Nobody reading this can tell why you chose /s/, whether 60% is good or bad for this child, what \"improving\" is being compared to, or what continuing means. It also does nothing for a funding request."},
+   {label:"The strong note",tone:"good",body:"<b>S:</b> Mum reports Charlie was understood by his grandmother on the phone for the first time — her example, unprompted.<br><b>O:</b> /s/ initial, 20 trials, 60% with model (up from 35% two weeks ago, same task, same cue level).<br><b>A:</b> Responding to modelling, so continuing with a child-directed pathway is justified. Still model-dependent — not yet generalising without a cue, which is why home practice matters more than session frequency here.<br><b>P:</b> Same target two more sessions, then reduce cue level. Review 14 Sept. If not spontaneous by then, reconsider target selection.",
+    why:"Same session, same numbers. The difference is that the reasoning is visible, the comparison is explicit, there is a date, and there is a stated trigger for changing direction. This note survives a plan review and a change of clinician."}]},
+  {t:"quiz",title:"Who is this written for?",items:[
+   {q:"\"Charlie requires ongoing speech pathology to address his articulation disorder.\"",o:["Works for a funding reader","Works for a teacher","Works for nobody"],a:2,
+    e:"No functional impact, no evidence of trial, no link to a goal, nothing anyone can action. This sentence appears in thousands of reports and does nothing in any of them."},
+   {q:"\"Give Charlie extra time to respond and check his understanding by asking him to tell you the plan back.\"",o:["Written for the funding reader","Written for the teacher","Written for the file"],a:1,
+    e:"Short, specific, actionable, and takes under a minute. That is what writing for a school looks like."},
+   {q:"\"Without support, Charlie is unable to follow classroom instructions independently, requiring adult repetition an estimated 8-10 times per lesson.\"",o:["Written for the funding reader","Written for the parent","Written for the teacher"],a:0,
+    e:"Functional impact, quantified. This is the register a funding request needs — and note it is observational data, not a test score."}]}],
+ prompts:["Of everything going on for this child, which one thing, if it changed, would move the outcome most?",
+  "What would you target first, and why that and not the others?",
+  "Is this an oral-motor problem or a sensory one? What is your evidence, and what changes if you are wrong?",
+  "Read your last case note back. Could a stranger tell why you did what you did?",
+  "How long will you work on this, and how will you know when to stop?",
+  "You have been seeing this child weekly for eight months. Defend that."],
+ cases:[
+  {who:"Case A",name:"Tilly, 4",tags:["Competing priorities","Sequencing","Dose"],
+   body:"Tilly has a moderate phonological disorder. Four months ago she began stuttering, and it has become more noticeable in the last fortnight. Her parents want both addressed immediately and have asked for twice-weekly sessions. They can afford it and their plan has funds. Tilly is bright, chatty and completely unbothered by any of it.",
+   qs:["What do you do first, and why?","Does treating one risk making the other worse?","The family asked for twice weekly. What is your answer, and your reasoning?","What is your review point, and what would make you change direction?","Write the first two lines of the note that explains this decision."],
+   look:"There is no single right sequencing answer, and that is the point — what matters is whether they can justify a choice. Watch for a new grad who says yes to twice weekly because the funding is there. More is not a rationale."},
+  {who:"Case B",name:"Noah, 11",tags:["Language and literacy","Engagement","Plan review"],
+   body:"Noah has a developmental language disorder diagnosed at six. He is now two years behind in reading, refuses to read aloud, and has been moved to a lower group. His school describes him as a behaviour problem and has stopped inviting you to meetings. He told you in session two that therapy is pointless and he wants to be left alone. His plan review is in six weeks and the current goals were written by a previous provider, all about sentence structure.",
+   qs:["What is the primary driver here — language, literacy, or something else?","How do you get a goal Noah would actually work on?","Direct intervention or environmental accommodation? Argue both sides.","What do you need in writing before that plan review, and when do you start it?","How do you get back in the room with that school?"],
+   look:"His self-concept is doing more damage than his language at this point. Look for whether they think to ask Noah what he wants, and whether they realise inherited goals can be abandoned."}]},
+
+{id:"w4",n:4,title:"Coaching Families and Educators",
+ q:"How do I change what the adults around this child do?",
+ blurb:"Medical versus social model, neurodiversity-affirming practice, motivational interviewing and entrenched beliefs.",
+ lede:"Almost all of the therapy happens when we are not in the room, so changing what the adults do is the job.",
+ objectives:["Tell whether a family is working from a medical or a social model, and why it matters",
+  "Describe neurodiversity-affirming practice and what it rules in and out",
+  "Use the motivational interviewing spirit and toolkit","Coach a parent rather than hand them a home program",
+  "Recognise an entrenched belief and pick a strategy that matches it",
+  "Design something an educator with twenty-six children will actually do"],
+ blocks:[
+  {h:"Where the family is standing",p:"If a parent believes the fix happens in our room, they will not do anything in theirs. Every home practice conversation is downstream of this."},
+  {t:"compare",title:"The same child, two models",panes:[
+   {label:"Medical model",body:"<b>The problem is in Sam.</b> He has a communication impairment. The job is to fix Sam so that he can function normally in a normal classroom. Progress is measured by how much closer to typical he gets. Therapy is something specialists do to him.",
+    why:"Most families arrive here, and they got here honestly — the diagnostic pathway is built this way and so is most of what they have been told. It is not ignorance and it should not be treated as such."},
+   {label:"Social model",tone:"good",body:"<b>The problem is in the gap.</b> Sam communicates. The environment was built for people who communicate differently. The job includes changing the environment, the partners and the expectations — as well as building Sam's skills. Progress is measured by participation.",
+    why:"This is where practice and evidence are moving, and it is the foundation of everything in this workshop. It is also a shift, not a switch — you will not convert anyone in one session, and arguing it head-on rarely works."}]},
+  {t:"quiz",title:"Which model is this parent using?",items:[
+   {q:"\"I just want him to be able to talk properly before he starts school.\"",o:["Medical","Social","Mixed"],a:0,
+    e:"Medical. Note it, do not correct it. This is where almost everyone starts, and the useful response is curiosity about what school worries her, not a lecture about models."},
+   {q:"\"His teacher is great but the classroom is so loud he can't hear a thing.\"",o:["Medical","Social","Mixed"],a:1,
+    e:"Social — she has located part of the problem in the environment. This parent will be receptive to environmental recommendations. Use it."},
+   {q:"\"We do the exercises every night but the school won't use his device.\"",o:["Medical","Social","Mixed"],a:2,
+    e:"Mixed, and that is the most common real answer. She is doing impairment-focused practice at home and simultaneously identifying an environmental barrier. Meet her at the part that is already social."}]},
+  {h:"Neurodiversity-affirming practice"},
+  {t:"sort",title:"Goals we write, and goals we do not",buckets:["We write this","We do not"],
+   items:[["Makes eye contact for 5 seconds when greeted",2],["Tells an adult when he needs a break",1],
+    ["Keeps hands still during mat time",2],["Repairs a breakdown by trying a different word or gesture",1],
+    ["Uses a whole-body listening posture",2],["Orders independently at the canteen using any method",1],
+    ["Greets peers in an age-appropriate manner",2],["Says no to an activity he does not want to do",1]],
+   e:"The ones we write are about participation, being understood, and self-advocacy. The ones we do not are about looking typical — they train masking, and masking has a well-documented cost. New grads need a script for saying this to a school, because schools ask for the second list constantly and are not being malicious when they do."},
+  {t:"cards",title:"Scripts for hard moments",items:[
+   ["\"Can you write a goal for eye contact?\"","\"I can write a goal about him letting people know he is listening — a lot of kids do that without looking, and forcing eye contact usually costs them attention rather than adding it. Would that work for what you need?\""],
+   ["\"Will she ever be normal?\"","Do not answer the word. Answer the fear underneath it: \"What are you most worried about for her?\" It is almost always something specific — friends, school, independence — and that you can work with."],
+   ["\"He's just being lazy.\"","\"I wondered that too at first. Can I show you what happens when I make the task shorter?\" Demonstrate rather than argue. Watch the belief move in real time."],
+   ["\"The device will stop him talking.\"","\"That was what everyone thought for a long time. The research has actually gone the other way — kids who use devices tend to talk more, not less. Can we trial it for six weeks and you tell me what you see?\""]]},
+  {h:"Motivational interviewing"},
+  {t:"diagram",title:"Match your task to where they are",d:DIA_STAGES},
+  {t:"cards",title:"The toolkit — OARS and RULE",items:[
+   ["O — Open questions","Questions that cannot be answered with yes. \"What would need to change for this to feel possible?\" beats \"Did you do the homework?\""],
+   ["A — Affirmations","Specific, true, and about effort rather than outcome. Generic praise reads as technique and lands badly."],
+   ["R — Reflective listening","Say back what you heard, slightly deeper than they said it. This does more work than any question you will ask."],
+   ["S — Summaries","Gather the threads and hand them back. Ends a section, checks you understood, and often produces the change talk on its own."],
+   ["R — Resist the righting reflex","The urge to correct, reassure or fix. The single biggest source of resistance in the room, and it comes from caring."],
+   ["U — Understand motivations","Theirs, not yours. Why would this parent want this to change? If you cannot answer, you are not ready to plan."],
+   ["L — Listen","Genuinely. Most clinicians listen for the gap where they can start talking."],
+   ["E — Empower","They are the expert on their child and their week. Your job is options, not instructions."]]},
+  {t:"scale",title:"Try the scaling question",rows:["How important is doing this? (0–10)","How confident are you that you could? (0–10)"],
+   bands:[[0,3,"Low on both. This is a precontemplation conversation, not a planning one. Ask what would have to be different — and then stop talking.",'#F7E9E6'],
+    [4,6,"The interesting zone. Ask \"why not lower?\" — that question makes them argue for change instead of you doing it. Then ask what would move it up by one.",'#FAF2E2'],
+    [7,10,"High enough to plan. Move to what, when and how — and make the first step smaller than they think it needs to be.",'#E3F0D2']]},
+  {t:"bar",lbl:"The one thing",body:"The question that does the work is not \"why is it only a 4?\" It is \"why not lower?\" — because it makes the parent voice the reasons for change instead of defending their position to you."},
+  {h:"Misconceptions",p:"Matching the strategy to how entrenched the belief is."},
+  {t:"diagram",title:"How hard is this belief?",d:DIA_MISC},
+  {t:"quiz",title:"Which is it, and what do you do?",items:[
+   {q:"\"I didn't know I was supposed to wait for her to answer.\"",o:["Missing bits","Sandcastle","Sandstone"],a:0,
+    e:"Missing bits. She has a hole, not a wrong belief. Fill it, show her once, done. Do not turn this into a project."},
+   {q:"\"Our GP told us at his two-year check that boys talk late and he'd catch up. That was four years ago.\"",o:["Single grain","Sandcastle","Sandstone"],a:2,
+    e:"Sandstone — cemented and authority-backed. Facts will bounce. This needs a story, an experience that contradicts it, and several conversations. Also note the grief in it: acting now means four years were lost."},
+   {q:"\"She understands everything, she just won't talk. She's stubborn like her father. She talks fine when she wants to.\"",o:["Missing bits","Sandcastle","Single grain"],a:1,
+    e:"Sandcastle — three beliefs holding each other up. Arguing any one of them does nothing. Rebuild the model with a different story about what is happening, then the grains fall on their own."}]},
+  {h:"Coaching, not handouts"},
+  {t:"steps",title:"The coaching cycle",items:[
+   ["Plan it together","Their routine, their priority, their words. If you chose it, it is your program and it will not happen."],
+   ["Demonstrate","Do it in front of them, narrate what you are doing and why. Thirty seconds, not a tutorial."],
+   ["They practise while you are there","This is the step that gets skipped and it is the step that works. Watching them do it once tells you more than six weeks of reports."],
+   ["Specific feedback","One thing they did well, named precisely. One thing to change, only one."],
+   ["Reflect","What felt hard? What would get in the way this week? Ask before they leave, not after they fail."],
+   ["Plan the week","Concrete, small, and designed for the tired version of them. Five minutes done daily beats thirty minutes never done."]]},
+  {t:"quiz",title:"Home practice hasn't happened for six weeks",items:[
+   {q:"Pick your opening.",o:["\"How did you go with the home program?\"","\"Tell me what a typical evening looks like at your place.\"","\"I know it's hard to find time — let's simplify it.\""],a:1,
+    e:"The second. The first invites an apology and a lie. The third solves a problem you have not diagnosed yet — it might be capacity, it might be belief, it might be that the program was designed for a family that does not exist. Find out first."}]}],
+ prompts:["Is this parent working from a medical model or a social model? How can you tell from what they said?",
+  "A school asks you to write a goal about eye contact. Say your answer out loud, now.",
+  "Home practice has not happened for six weeks. What is your first question — and it should not be \"why not?\"",
+  "Which family on your caseload is in precontemplation right now? What is your task with them this fortnight?",
+  "A parent tells you the paediatrician said to wait. How do you respond without contradicting a doctor?",
+  "What would you ask a teacher to do that would take her less than a minute a lesson?",
+  "When did you last catch yourself in the righting reflex?"],
+ cases:[
+  {who:"Case A",name:"Jess, mother of Leo (3)",tags:["Parent coaching","Home practice","MI"],
+   body:"Leo has been coming for twelve months. Progress has been slow. Almost no home practice has happened in that time. Jess has three children under six, works night shifts as an aged care assistant, and apologises at the start of every session. Over the last two months she has cancelled four times. When you ask about the home program she says she knows she should be doing it and she just has not got to it.",
+   qs:["What is your first question to Jess — and it should not be about the home program?","Is this motivation, capacity, or design? How would you find out?","Redesign the home practice for the life she actually has.","How do you affirm her without it sounding like a technique?","What is your scaling question here, and what does a 4 tell you that a 7 does not?"],
+   look:"The apologising is the clue — she is not ambivalent, she is drowning, and the program was designed for someone else's week. Watch for a new grad who reaches for more education. Four cancellations is a message."},
+  {who:"Case B",name:"Mr Brennan, Grade 2 teacher",tags:["Educator training","Sandstone belief","AAC"],
+   body:"His student Sam, 7, has a funded speech-generating device that is used well at home and stays in his bag at school. Mr Brennan is warm, well-meaning and has twenty-six other children. He tells you he thinks the device is giving up on Sam talking, and that Sam \"can say words when he wants to\". He also mentions, almost in passing, that he does not have time for another program.",
+   qs:["Which misconception is this, and how entrenched?","What do you say about AAC and speech — and how do you say it so it lands?","Design one strategy that takes him less than a minute a lesson.","How much is belief and how much is workload? Does that change your approach?","Who else needs to be in this conversation, and when?"],
+   look:"Two problems needing different responses — a belief and a genuine constraint. Solving only the belief leaves you with a teacher who agrees with you and still does nothing. Watch for whether they ask Sam what he wants."}]},
+
+{id:"w5",n:5,title:"Regulation, Behaviour and Restrictive Practices",
+ q:"Is this refusal or dysregulation — and am I accidentally restricting someone?",
+ blurb:"Reading dysregulation, behaviour as communication, and recognising a restrictive practice when you see one.",
+ lede:"Telling refusal from dysregulation, reading behaviour as communication, and knowing when a strategy has become a restrictive practice.",
+ flag:"<b>Check before running this session.</b> The restrictive practice content needs a compliance check against current NDIS Commission requirements and Victorian authorisation processes. The framework is sound; the procedural detail needs an owner, and the session should point clinicians at PACE's own policy.",
+ objectives:["Tell dysregulation from refusal and avoidance, and respond to each differently",
+  "Adjust a session so a dysregulated child can participate","Read a behaviour as communication",
+  "Define a restrictive practice and recognise one in the wild — including their own",
+  "Say what to do when they see one being used","Know when PBS, psychology or OT needs to be involved"],
+ blocks:[
+  {h:"Regulation comes first",p:"You cannot assess or treat a dysregulated child. What you get is a floor, not a ceiling — and if you record it as a result, it follows that child around."},
+  {t:"diagram",title:"The window of tolerance",d:DIA_WOT},
+  {t:"quiz",title:"Dysregulation or refusal?",hint:"Four from real sessions",items:[
+   {q:"He looks at the task, says \"no thanks\", and goes back to his book. Calm throughout.",o:["Dysregulated","Refusing","Shut down"],a:1,
+    e:"Refusing — and doing it beautifully. This is a communication success. The question is not how to override it but why the task is not worth doing, and whether he is right."},
+   {q:"She is giggling wildly, running laps of the room, and will not make eye contact with the table.",o:["Dysregulated","Being silly","Avoiding"],a:0,
+    e:"Hyper-aroused. Giddy silliness reads as fun and is often flight. Regulate first — nothing you teach in this state lands."},
+   {q:"He sits quietly, complies with everything, gives one-word answers and does not initiate once in forty minutes.",o:["Regulated and cooperative","Hypo-aroused","Just a quiet kid"],a:1,
+    e:"The dangerous one, because it looks like good behaviour. A shut-down child often gets recorded as a valid low result. Check before you write that score down."},
+   {q:"He bolts the moment you take out the assessment folder, every single week.",o:["Dysregulated","Learned escape","Both"],a:2,
+    e:"Both, and the order matters — the folder now predicts something aversive, so the sight of it moves him out of the window. Change the antecedent, not the consequence."}]},
+  {t:"cards",title:"Getting a child back in the window",items:[
+   ["Your own state first","Pace, volume, body position, how fast you talk. Co-regulation is not a technique you deploy — it is the thing you already are when you walk in."],
+   ["Drop the demand","Not the session. Go to something they can win at. You can always come back up; you cannot come back from an escalation."],
+   ["Make it predictable","What we are doing, how many, when it ends. Visual, not verbal. Uncertainty is the most common trigger you can actually remove."],
+   ["Give real choice","Two options you are happy with. Choice restores control, and lack of control is usually what is driving it."],
+   ["Movement","Before, not as a reward after. Many children cannot access language until their body has done something."],
+   ["Know when to stop","And write down what you learned. A session spent finding out what dysregulates this child is a session well spent."]]},
+  {h:"Behaviour is communication"},
+  {t:"diagram",title:"Four functions",d:DIA_FUNC},
+  {t:"quiz",title:"What is the function?",items:[
+   {q:"Marcus, 4, thirty words, bites during mat time. Mat time is twenty minutes and he is moved away after he bites.",o:["Attention","Escape","Sensory"],a:1,
+    e:"Escape — and it works perfectly every time. Twenty minutes of mat time he cannot access, and biting reliably ends it. He has found the only method available to a child with thirty words. Change the mat time, not the biting."},
+   {q:"A child screams and grabs when another child has the dinosaur.",o:["Access","Attention","Escape"],a:0,
+    e:"Access, and it is the most directly ours of the four. A child who cannot request is a child who will take, grab or scream. Build the request and the grabbing has no job left."},
+   {q:"A child hums and rocks steadily throughout a quiet task, is not distressed, and is working well.",o:["Sensory","Attention","Escape"],a:0,
+    e:"Sensory, and it is doing a job. Extinguishing it removes a regulation strategy and gives nothing back. Leave it. If a school wants it stopped, that is a conversation about their comfort, not his function."}]},
+  {t:"bar",lbl:"The one thing",body:"The question is never \"how do I stop this?\" but \"what is this getting them, and is there a better route to the same thing?\""},
+  {h:"Restrictive practices",p:"Clinicians use these without recognising them. Blocking a doorway, holding hands down, keeping a preferred toy as leverage — all easy to do with entirely good intentions."},
+  {t:"table",head:["Type","What it can look like in a session or classroom"],
+   rows:[["Seclusion","Sole confinement in a space the person cannot freely leave — including calm rooms, withdrawal rooms and time-out spaces where the door is held shut"],
+    ["Chemical restraint","Medication used to influence behaviour, other than for a diagnosed condition"],
+    ["Mechanical restraint","A device used to restrict movement for behaviour purposes — as distinct from equipment prescribed for therapeutic or postural support"],
+    ["Physical restraint","Using physical force to restrict movement — including holding a child in a chair, or physically guiding a child who is resisting"],
+    ["Environmental restraint","Restricting free access to the environment or to items — locked gates and cupboards, or withholding a preferred object"]]},
+  {t:"quiz",title:"Is this a restrictive practice?",hint:"The centrepiece of this hour",items:[
+   {q:"An aide holds a child's chair so he cannot leave the table during your session.",o:["Yes — physical restraint","No — it is just support","Depends on the child"],a:0,
+    e:"Physical restraint. Using force to restrict movement. She is kind, she is trying to help you get work done, and it still meets the definition. This is the most common one clinicians walk past."},
+   {q:"A seatbelt on the bus to school.",o:["Yes — mechanical restraint","No","Depends"],a:1,
+    e:"No. Used for the same reason it is used for everyone, not to manage behaviour. The test is purpose, not the device."},
+   {q:"A harness used on a child who bolts into traffic.",o:["Yes","No","This is exactly where you ask"],a:2,
+    e:"This is a genuine boundary case and the honest answer is to ask rather than assume. Purpose, alternatives tried, whether it is in a plan, and whether it is authorised all matter. The instinct to check is the thing being taught here."},
+   {q:"A school puts a child in a withdrawal room and holds the door until he calms down.",o:["Yes — seclusion","No — it is a calm space","Only if it is locked"],a:0,
+    e:"Seclusion. Sole confinement in a space he cannot freely leave — and holding the door is exactly that, whether or not there is a lock. The name on the door does not change what it is."},
+   {q:"Kinder removes a child's favourite dinosaurs because he will not share them.",o:["Yes — environmental restraint","No — it is a consequence","No — they are kinder's toys"],a:0,
+    e:"Environmental restraint: restricting free access to items. It was meant as a consequence. What it actually did was remove his motivation, his regulation object and his only reliable topic of conversation."},
+   {q:"You keep a preferred toy on your lap and hand it over after each correct trial.",o:["Yes","No — that is reinforcement","Worth thinking about"],a:2,
+    e:"Usually fine as reinforcement, and worth thinking about honestly. If the child has no other route to that item and the only way to get it is compliance, you are closer to the line than it feels. Ask the question rather than assume you are exempt."}]},
+  {t:"check",title:"You have just recognised one. Now what?",hint:"In order",items:[
+   ["Do not accuse the person who told you","They told you because they trust you, and they almost certainly do not know. Lose that trust and you lose all visibility."],
+   ["Name it plainly and without drama","\"I think that might count as a restrictive practice — can we check?\" is a very different sentence to \"you can't do that\"."],
+   ["Ask what problem it is solving","There is always a real problem underneath. If you remove the practice without solving that, it comes back in a different form."],
+   ["Offer the antecedent alternative","Change the demand, the setting or the predictability. That is almost always where the answer is."],
+   ["Document what you observed and what you did","Factually, same day, in the file."],
+   ["Escalate to your supervisor","This is not a solo decision, and it should not sit with you alone."],
+   ["Consider whether PBS or psychology is needed","If there is a behaviour support plan, the practice needs to be in it and authorised."]]},
+  {t:"note",tone:"warn",body:"<b>Why it matters.</b> Regulated restrictive practices require authorisation and a behaviour support plan, must be reported, and carry real legal and registration consequences when they are not. Point clinicians at PACE's own policy for the procedural detail."}],
+ prompts:["Was that a refusal, or was that child dysregulated? What was your evidence?",
+  "What is the behaviour getting this child, and is there a communication route to the same thing?",
+  "Have you ever done something in a session that might meet the definition? Be honest — most of us have.",
+  "A teacher tells you they hold the withdrawal room door shut. What do you do next, this week?",
+  "Where is the line between a supportive strategy and an environmental restraint?",
+  "You abandoned your plan because the child was dysregulated. What goes in the note?"],
+ cases:[
+  {who:"Case A",name:"Ollie, 6",tags:["Dysregulation vs refusal","Physical restraint","Seclusion"],
+   body:"Ollie has been labelled non-compliant. He bolts from the table within minutes and his aide has started holding his chair to keep him seated during your sessions — she says it is the only way he gets any work done. His school uses a withdrawal room when he escalates and holds the door until he calms down. Everyone involved is kind, everyone is doing their best, and nobody thinks they are doing anything unusual.",
+   qs:["What here is regulation, what is communication, and what is a restrictive practice?","The aide holds his chair during your session. What do you do — in the moment, and afterwards?","What is bolting getting Ollie?","How do you raise the withdrawal room with a school you need to keep working with?","What do you actually do on Monday, in order?"],
+   look:"Both the chair and the room meet definitions. The hard part is the conversation, not the identification. Watch for whether they can name it without making the aide the villain — and whether they think to change the demand rather than manage the escape."},
+  {who:"Case B",name:"Marcus, 4",tags:["Behaviour as communication","Environmental restraint","Kinder"],
+   body:"Marcus is at kinder four days a week and has been biting during mat time. Staff have started keeping him in a separate area behind a gate during mat sessions, and have removed the dinosaur figures he loves because he would not share them. He has around thirty words. His parents have been asked to consider whether kinder is the right setting for him. You are there to work on his language.",
+   qs:["What is the bite achieving? What would you observe to find out?","Which of the kinder's strategies meet the definition?","Removing the dinosaurs was meant as a consequence. What has it actually done?","What would you change before mat time rather than during it?","Is this a language goal, a regulation goal, or a kinder goal — and who else is needed?"],
+   look:"Thirty words and a mat session he cannot access is a communication problem being read as a behaviour problem. The dinosaurs were his motivation and his only reliable topic. Watch for whether they see the gate for what it is."}]},
+
+{id:"w6",n:6,title:"Scope, Red Flags and Referral Pathways",
+ q:"Is this mine? And if not, whose is it and how do I hand it over?",
+ blurb:"Where speech pathology stops, the red flags that matter, the feeding screener, and referrals that work.",
+ lede:"Knowing where speech pathology stops, and what to do at that point.",
+ objectives:["Recognise when a presentation is moving outside their scope or their competence",
+  "Identify red flags across medical, developmental and psychosocial domains",
+  "Run a feeding screen and follow the feeding referral pathway",
+  "Answer the common parent questions that are really referral questions",
+  "Make a referral that is actually useful",
+  "Work alongside OT, psychology, EP and dietetics without duplicating or contradicting them"],
+ blocks:[
+  {h:"Two different questions"},
+  {t:"diagram",title:"Scope and competence",d:DIA_SCOPE},
+  {t:"bar",lbl:"The one thing",body:"Saying \"this is beyond me right now\" is a professional act, not an admission of failure."},
+  {h:"Red flags"},
+  {t:"quiz",title:"Where does this go, and how fast?",hint:"Six to triage",items:[
+   {q:"Wet, gurgly voice after drinking. Two chest infections last winter.",o:["Monitor and review in a month","Medical review — days not weeks","Dietetics"],a:1,
+    e:"Escalate. Possible aspiration. This changes your timeframe from weeks to days, and it comes before any feeding programme."},
+   {q:"A four-year-old has lost words he could say six months ago.",o:["Intensive language therapy","Paediatrician, promptly","Reassure — plateaus are normal"],a:1,
+    e:"Regression is a medical question before it is a speech one. This needs review, not therapy."},
+   {q:"Recurrent ear infections, inattention in noise, inconsistent responding.",o:["Audiology before any language conclusion","Language assessment first","Refer to OT"],a:0,
+    e:"Audiology first. The most common miss in the whole caseload, and language conclusions drawn over fluctuating hearing follow a child for years."},
+   {q:"An eight-year-old says he is \"the dumb one\" and has started refusing school.",o:["Build his confidence in sessions","Psychology, alongside or ahead of speech","Tell the parents not to worry"],a:1,
+    e:"Psychology. You can and should keep working, but self-concept and school refusal at eight need someone whose job that is. This one is easy to walk past because it arrives in a throwaway sentence."},
+   {q:"Restricted intake, weight crossing centiles downward.",o:["Feeding programme","Paediatrician and dietetics, promptly","Watch for three months"],a:1,
+    e:"Growth concerns go up, fast. A feeding programme built on top of faltering growth is the wrong intervention at the wrong time."},
+   {q:"A child mentions something that makes you worry about what is happening at home.",o:["Wait and see if it comes up again","Escalate the same day","Ask the parent directly"],a:1,
+    e:"Same day. You report a suspicion — you do not establish a fact. Escalate to your supervisor and follow the safeguarding pathway."}]},
+  {h:"Feeding",p:"Fussy eating is not a diagnosis. It is a presentation. Underneath is either delayed oral sensory development, or an organic cause."},
+  {t:"diagram",title:"Screen, act, or refer",d:DIA_FEED},
+  {t:"compare",title:"Two feeding referrals",panes:[
+   {label:"Medical / anatomical",body:"Cerebral palsy, structural anomalies, neurological conditions, tube feeding and weaning. Often long-standing, often with a swallow safety dimension.",
+    why:"Specialist multidisciplinary feeding territory. Know the pathway, make the referral, and stay involved for communication."},
+   {label:"Oral sensory-based",tone:"good",body:"Narrow accepted range, texture aversion, gagging on novel foods, mealtime distress, growing pressure at home. No organic cause identified.",
+    why:"This is the group where community speech pathology can do real work — environment, pacing, pressure, graded exposure — with dietetics alongside for nutritional adequacy."}]},
+  {t:"quiz",title:"\"My three-year-old only eats eight foods.\"",items:[
+   {q:"Pick the most important next question.",o:["Which eight foods are they?","Is that range getting wider or narrower?","Have you tried hiding vegetables in things?"],a:1,
+    e:"Direction of travel. A stable range of eight in a thriving, content child is a very different clinical picture to a range that was fifteen last year. Narrowing is the concerning direction, and it is the question people forget to ask."}]},
+  {h:"The questions parents actually ask"},
+  {t:"cards",title:"How to answer without overstepping",items:[
+   ["\"Should he have an autism assessment?\"","You can say what you have observed and that an assessment would answer it. You cannot diagnose or predict the outcome. Name who does it — paediatrician or psychologist — and offer to write down what you have seen so they do not have to remember it."],
+   ["\"Is this ADHD?\"","Same shape. Describe what you see, name who answers it, and do not speculate. Note that attention difficulties and language difficulties look almost identical from the outside."],
+   ["\"Does she need OT?\"","Often yes, and this one is easy — describe the specific things you have noticed, and use the internal referral process so it is tracked."],
+   ["\"Will he be okay at school?\"","The honest answer is a range, not a yes. What you can offer is what would improve the odds, and what you would want in place before he starts."],
+   ["\"What about social skills?\"","Sits across speech, OT and psychology. Who leads depends on the driver. Be clear about the affirming version — participation and self-advocacy, not compliance training."],
+   ["\"I don't know.\"","Perfectly good answer, as long as it is followed by \"but I know who would\". It builds more trust than a guess, and a guess that turns out wrong costs you the relationship."]]},
+  {h:"Making the referral work"},
+  {t:"compare",title:"Two referrals to the same OT",panes:[
+   {label:"The one that stalls",tone:"bad",body:"\"Referring Sam, 7, for OT assessment. Sensory concerns. Please assess.\"",
+    why:"No question, no context, nothing tried, no indication of what you will do with the answer. It will sit in a queue and come back as a generic report that changes nothing."},
+   {label:"The one that works",tone:"good",body:"\"Referring Sam, 7. He is leaving mat time within four minutes and I think it may be auditory rather than behavioural — I have tried reducing the length and giving him a visual timer, which helped a little. <b>My question:</b> is there a sensory profile here that would explain it, and are there classroom adjustments the teacher could make? I will use the answer to decide whether his communication goals should sit in class or in withdrawal.\"",
+    why:"A specific question, the context, what you have already tried, and what you will do with the answer. Note the last line — it tells the OT their work will actually be used."}]},
+  {t:"check",title:"Closing the loop",hint:"Tick what you do already",items:[
+   ["Ask every family who else is in their care team","At intake, and again at six months, because it changes."],
+   ["Use the internal referral process","So it is tracked and allocated, rather than depending on knowing someone."],
+   ["State your question, not just the domain","\"Please assess\" is not a referral."],
+   ["Say what you have already tried","Saves them repeating your work."],
+   ["Say what you will do with the answer","Makes it much more likely you get a usable one."],
+   ["Find out who was allocated","A referral with no feedback pathway is a handoff, not collaboration."],
+   ["Follow up if you hear nothing","Nobody else is tracking this for you."]]}],
+ prompts:["When was the last time you thought \"this might not be mine\"? What did you do about it?",
+  "Where is your personal edge? What would you refer on that a colleague might keep?",
+  "A parent says their three-year-old eats eight foods. What are your next five questions?",
+  "A parent asks whether their child should have an autism assessment. Answer it out loud.",
+  "You find out at session four that this child has been seeing a PACE OT for two years. What should have happened?",
+  "What does a referral you would want to receive look like?",
+  "Name something you are currently doing at the edge of your competence. What would help?"],
+ cases:[
+  {who:"Case A",name:"Zara, 2",tags:["Feeding red flags","Referral","Frightened parent"],
+   body:"Zara was born at 29 weeks. She eats eight foods, all beige, and gags on anything with texture. She has dropped from the 25th to the 3rd percentile for weight over eight months. Her mother has started blending everything so she will eat something, and cried in your intake call. There is a note in the file about two chest infections last winter. The family were referred to you for speech — Zara has around twenty words.",
+   qs:["What is yours here, what is not, and what is urgent?","Which finding changes your timeframe from weeks to days?","How do you refer on without the mother hearing it as being passed around?","Do you keep working on the twenty words while this happens?","What goes in your note, and who gets a copy?"],
+   look:"Two chest infections plus faltering growth plus texture gagging is a medical referral today, not a feeding program. Watch for whether they spot the respiratory history — it is deliberately buried in the file. Also watch whether they abandon the language work unnecessarily."},
+  {who:"Case B",name:"Ethan, 5",tags:["Multiple referrals","Parent questions","Pacing"],
+   body:"Ethan was referred for speech sound errors. Over four sessions you have noticed he is exhausted by 2pm, cannot manage a pencil, has told you twice that he is \"the dumb one\", and hides under the table when the room gets loud. His mother asks you at the end of session four whether he should have an autism assessment, and adds that his kinder teacher \"thinks he's just behind\". His speech sound errors are mild.",
+   qs:["How many referral conversations are in this case? Rank them.","His mother asked a direct question about autism. Answer it out loud, now.","What do you say about \"the dumb one\" — to Ethan, and to his mother?","Do you keep treating the speech sounds?","How do you raise four concerns without overwhelming a parent who came in about a lisp?"],
+   look:"The self-concept comment is the most urgent thing in the case and the easiest to walk past. Look for pacing — a new grad will either say nothing or unload everything. Neither works."}]}
+];
+
+/* ===================== PAGES ===================== */
+function caseHTML(c,i){
+  return '<div class="case'+(i%2?' alt':'')+'"><div class="who">'+c.who+'</div><h4>'+c.name+'</h4>'+
+    '<div>'+c.tags.map(function(t){return '<span class="tag">'+t+'</span>'}).join('')+'</div>'+
+    '<p>'+c.body+'</p>'+
+    '<div class="qs"><h5>Questions to work through</h5><ol>'+c.qs.map(function(q){return '<li>'+q+'</li>'}).join('')+'</ol></div>'+
+    '<div class="reveal"><button class="btn-r">▸ What you are listening for — open after the discussion</button>'+
+    '<div class="body">'+c.look+'</div></div></div>';
+}
+function modulePage(m){
+  SECN=0;
+  var h='<div class="lockup"><div class="eyebrow">Workshop '+m.n+' · 60 minutes</div>'+
+    '<h2>'+m.title+'</h2><p class="subline">'+m.lede+'</p></div>';
+  if(m.flag) h+='<div class="note flag">'+m.flag+'</div>';
+  h+='<div class="card"><h4>Run sheet</h4>'+runsheet()+
+     '<h4 style="margin-top:16px">By the end of the hour, they can</h4><ul class="t">'+
+     m.objectives.map(function(o){return '<li>'+o+'</li>'}).join('')+'</ul></div>';
+  h+=m.blocks.map(block).join('');
+  h+='<div class="prompts"><h4>Discussion prompts</h4><ol>'+
+     m.prompts.map(function(p){return '<li>'+p+'</li>'}).join('')+'</ol></div>';
+  SECN++;
+  h+='<h3 class="sec"><span class="badge">'+SECN+'</span>Case studies</h3>'+
+     '<p class="sub">Take one. Use the second if the first runs short, or in a later cycle so the same case is not reused.</p>'+
+     m.cases.map(caseHTML).join('');
+  h+='<div class="card green"><h4>Closing the hour</h4><ul class="t">'+
+     '<li>What is one thing you will do differently in the next fortnight?</li>'+
+     '<li>What felt shakiest today? That is the handbook chapter to send them to.</li>'+
+     '<li>Note anything for the next one-on-one.</li></ul></div>';
+  var prev=m.n>1?MODULES[m.n-2]:null, next=m.n<6?MODULES[m.n]:{id:'ndis',title:'NDIS Essentials'};
+  h+='<div class="btnrow">'+(prev?'<button class="btn ghost" data-go="'+prev.id+'">← '+prev.title+'</button>':'')+
+    '<button class="btn" data-go="'+next.id+'">'+next.title+' →</button>'+
+    '<button class="btn ghost" data-print="1">Print this page</button></div>';
+  return h;
+}
+function homePage(){
+  var h='<div class="homehero"><span class="cc cc1"></span><span class="cc cc2"></span><div class="in">'+
+    '<div class="eyebrow">Module 1 · Foundations</div>'+
+    '<h2>Six workshops, one hour each</h2>'+
+    '<p>Module 1 runs inside existing supervision sessions, fortnightly, with a new speech pathologist. It is not a training event and it is not a lecture — each hour is a facilitated discussion built around diagrams, sorting exercises, quick decisions and a case.</p>'+
+    '<p>You do not need to know every detail of the content. Put a concept on the table, work through it together, and let the new clinician reason out loud. There are rarely right answers — the value is in hearing them justify their thinking.</p>'+
+    '<div class="facts"><div class="fact"><b>6</b> workshops</div><div class="fact"><b>60 min</b> each</div>'+
+    '<div class="fact"><b>12</b> case studies</div><div class="fact"><b>50+</b> interactive elements</div></div>'+
+    '<p class="who">Facilitated by Angela De Leon and Georgia Oliver · Mornington · Berwick · Reservoir · Community visits</p>'+
+    '</div></div>';
+  h+='<h3 class="sec"><span class="badge">1</span>The six workshops</h3>';
+  h+='<div class="grid">'+MODULES.map(function(m){
+    return '<div class="mod" data-go="'+m.id+'"><span class="chk"><input type="checkbox" id="chk-'+m.id+'" data-done="'+m.id+'" title="Mark complete"></span>'+
+      '<div class="n">'+m.n+'</div><h4>'+m.title+'</h4><p>'+m.blurb+'</p><div class="q">'+m.q+'</div></div>';
+  }).join('')+'</div>';
+  h+='<h3 class="sec"><span class="badge">2</span>What is in each hour</h3><div class="card">'+runsheet()+
+    '<p class="sub" style="margin:0">Every workshop follows the same shape, so neither of you has to think about structure — just about the person in front of you.</p></div>';
+  h+='<h3 class="sec"><span class="badge">3</span>Who to go to</h3>'+
+    wTable({head:["Situation","Who"],rows:[
+      ["Initial appointments, bookings, calendar, admin","Katie"],
+      ["Clinical questions, caseload, supervision","Georgia — Peninsula and south-east<br>Angela — Reservoir and north"],
+      ["Serious issues, escalations, complaints","Mark"]]});
+  h+='<div class="bar"><span class="lbl">Still to settle</span>The NDIS content sits outside the six as an induction session, and the restrictive practice detail in Workshop 5 needs a compliance check before that session runs.</div>';
+  h+='<div class="btnrow"><button class="btn" data-go="w1">Start with Workshop 1 →</button>'+
+     '<button class="btn ghost" data-go="fac">Facilitator notes</button></div>';
+  return h;
+}
+function ndisPage(){
+  SECN=0;
+  var h='<div class="lockup"><div class="eyebrow">Induction session · outside the six</div>'+
+    '<h2>NDIS Essentials</h2><p class="subline">How the funding works, what we have to write, and why it is getting harder.</p></div>'+
+    '<div class="note"><b>Why this sits outside the rotation.</b> This is orientation and compliance content, not clinical development. It does not gain much from open discussion — a new grad has no experience to reason from yet. Delivering it in week one also solves the "it needs to be earlier" problem better than any slot in a fortnightly sequence. It needs an owner on the onboarding checklist or it will get missed.</div>'+
+    '<div class="card"><h4>By the end, they can</h4><ul class="t">'+
+    '<li>Describe the referral routes into PACE and how they differ</li>'+
+    '<li>Explain which funding a speech pathology service is drawn from</li>'+
+    '<li>Write a progress report that supports a funding request</li>'+
+    '<li>Explain to a family, accurately, what their funding does and does not cover</li></ul></div>';
+  h+=block({t:"steps",title:"The session",items:[
+    ["Where clients come from","<ul><li>Private, Medicare (GP-referred plans) and NDIS — what changes clinically, and what changes administratively</li><li>Documentation requirements are broadly the same across all three. The reporting requirement is not</li></ul>"],
+    ["How the NDIS works, briefly","<ul><li>Plans, funding categories, and which bundle speech pathology is drawn from — a question families ask constantly</li><li>Funding periods, and what happens when funds run out mid-plan</li><li>Plan reviews and reassessments, and what we need ready in advance</li></ul>"],
+    ["Writing for the NDIS","<ul><li>Progress reports: what has changed, evidenced how, and what remains</li><li>Funding requests: functional impact, what was trialled, what it enabled, what happens without it</li><li>Writing about function rather than impairment — the observational data from Workshop 2 matters here</li><li>Why vague goals produce declined requests</li><li>The environment is tightening. Requests that would have passed two years ago will not now</li></ul>"],
+    ["Talking to families about money","<ul><li>Being straight about costs, session counts and what a plan will stretch to</li><li>What to do when funding runs out and the child still needs support</li></ul>"]]});
+  h+='<div class="note warn"><b>Alternative.</b> If an induction session is not practical, fold this into Workshop 3, which already covers documentation. The join is not artificial — but Workshop 3 becomes the heaviest hour in the module and funding mechanics get about fifteen minutes.</div>';
+  h+='<div class="btnrow"><button class="btn ghost" data-go="w6">← Workshop 6</button>'+
+     '<button class="btn" data-go="fac">For facilitators →</button></div>';
+  return h;
+}
+function facPage(){
+  SECN=0;
+  var h='<div class="lockup"><div class="eyebrow">Notes for Angela and Georgia</div>'+
+    '<h2>For facilitators</h2><p class="subline">How to run these, what to mark up, and what still needs a decision.</p></div>';
+  h+=block({t:"cards",title:"Running the hour",items:[
+    ["You are not teaching","Two or three minutes to name the concept, then get out of the way. If you are talking for more than a third of the hour, switch to a prompt or open a widget."],
+    ["Use the diagrams as the anchor","Share your screen and click through them together. It gives you both something to look at that is not each other, which makes hard answers easier."],
+    ["Let them answer the quizzes","Do not click first. The wrong answer is more useful to you than the right one, and the explanations are written to be read aloud."],
+    ["Silence is fine","New grads need longer than feels comfortable to answer a question nobody has asked them before."],
+    ["Follow the disagreement","If they say something you would not have done, ask them to justify it rather than correcting it. That is the whole exercise."],
+    ["Use your own caseload","The cases here are a fallback. A real client from this week will always work better."],
+    ["Run them in order","Later sessions assume earlier ones — 3 leans on 2, and 6 leans on 5."],
+    ["Skip freely","Nobody gets through all of this in an hour and you are not meant to. Pick the two or three things that matter for the person in front of you."]]});
+  h+='<div class="bar"><span class="lbl">What to mark up</span>The discussion prompts and the quiz explanations are what you will actually read aloud. Cut anything that does not sound like something you would say. Case names, ages and details are all fair game too.</div>';
+  h+='<h3 class="sec"><span class="badge">1</span>Open decisions</h3>'+
+    wTable({head:["Decision","Who"],rows:[
+      ["Whether NDIS Essentials runs as induction, or folds into Workshop 3","Georgia and Angela"],
+      ["Finalise the feeding framing, screener questions and referral thresholds","Angela"],
+      ["Compliance check on restrictive practices, and point Workshop 5 at PACE policy","Needs an owner"],
+      ["Confirm the internal referral process end to end, including how you learn a referral has been allocated","Aidan, with the OT team"],
+      ["Katie's email address for the platform and handbook","Georgia or Angela"],
+      ["Frequency — fortnightly, or something else","Georgia and Angela"],
+      ["Whether the prompts and explanations sound like you","Both"]]});
+  h+='<h3 class="sec"><span class="badge">2</span>Flagged, but not a training problem</h3><div class="card">'+
+    '<p style="margin-top:0">The communication gap between the speech and OT teams came up repeatedly. Training can teach clinicians to ask who else is in the care team, and Workshops 1 and 6 both do that. It cannot fix the underlying issue, which is that OT runs on a different system and speech has no visibility of shared clients.</p>'+
+    '<p style="margin-bottom:0">The suggestion from the meeting — a link between systems showing that a client has an OT, who it is, and since when, without needing access to their notes — is modest and would solve most of it.</p></div>';
+  h+='<div class="btnrow"><button class="btn ghost" data-go="home">← Home</button>'+
+     '<button class="btn ghost" data-print="1">Print everything</button></div>';
+  return h;
+}
+
+/* ===================== APP ===================== */
+var PAGES=[{id:"home",label:"Home",num:"",html:homePage}]
+  .concat(MODULES.map(function(m){return {id:m.id,label:m.title,num:String(m.n),html:function(){return modulePage(m)}}}))
+  .concat([{id:"ndis",label:"NDIS Essentials",num:"+",html:ndisPage},
+           {id:"fac",label:"For facilitators",num:"i",html:facPage}]);
+
+var tabsEl=document.getElementById('tabs'), mainEl=document.getElementById('main');
+tabsEl.innerHTML=PAGES.map(function(p){
+  return '<button data-id="'+p.id+'" data-go="'+p.id+'">'+(p.num?'<span class="num">'+p.num+'</span>':'')+p.label+'</button>';
+}).join('');
+mainEl.innerHTML=PAGES.map(function(p){
+  return '<section class="page" id="pg-'+p.id+'">'+p.html()+'</section>';
+}).join('');
+
+function go(id){
+  PAGES.forEach(function(p){var el=document.getElementById('pg-'+p.id); if(el) el.classList.toggle('on',p.id===id)});
+  Array.prototype.forEach.call(tabsEl.querySelectorAll('button'),function(b){b.classList.toggle('on',b.dataset.id===id)});
+  try{location.hash=id}catch(e){}
+  window.scrollTo(0,0);
+  var t=tabsEl.querySelector('[data-id="'+id+'"]'); if(t&&t.scrollIntoView) t.scrollIntoView({block:'nearest',inline:'nearest'});
+}
+
+document.addEventListener('click',function(e){
+  var t=e.target;
+  var goBtn=t.closest('[data-go]');
+  if(goBtn && !t.closest('.chk')){go(goBtn.dataset.go);return}
+  if(t.closest('[data-print]')){window.print();return}
+
+  var hot=t.closest('.hot');
+  if(hot){
+    var wrap=hot.closest('[data-dia]'); if(!wrap) return;
+    var id=wrap.dataset.dia, d=DIAS[id][hot.dataset.h];
+    Array.prototype.forEach.call(wrap.querySelectorAll('.hot'),function(x){x.classList.remove('sel')});
+    hot.classList.add('sel');
+    if(d) document.getElementById('dp-'+id).innerHTML='<h5>'+d[0]+'</h5><p>'+d[1]+'</p>';
+    return;
+  }
+  var fc=t.closest('.fc'); if(fc){fc.classList.toggle('open');return}
+
+  var chip=t.closest('.chip');
+  if(chip){
+    var cur=+chip.dataset.b, nx=cur>=2?1:cur+1;
+    var bs=SORTS[chip.closest('[data-sort]').dataset.sort].buckets;
+    chip.dataset.b=nx; chip.querySelector('.bk').textContent=nx===0?'?':bs[nx-1];
+    chip.classList.remove('right','wrong'); return;
+  }
+  var chk=t.closest('[data-sortcheck]');
+  if(chk){
+    var sid=chk.dataset.sortcheck, s=SORTS[sid], w=document.querySelector('[data-sort="'+sid+'"]'), r=0;
+    Array.prototype.forEach.call(w.querySelectorAll('.chip'),function(c){
+      var ok=(+c.dataset.b)===s.items[+c.dataset.i][1];
+      c.classList.toggle('right',ok); c.classList.toggle('wrong',!ok); if(ok) r++;
+    });
+    var ex=document.getElementById('se-'+sid);
+    ex.innerHTML='<b>'+r+' of '+s.items.length+'.</b> '+(SORTEX[sid]||''); ex.classList.add('show'); return;
+  }
+
+  var opt=t.closest('.opt');
+  if(opt){
+    var q=opt.closest('[data-q]'), qid=q.dataset.q, ans=QUIZ[qid].a, pick=+opt.dataset.oi;
+    Array.prototype.forEach.call(q.querySelectorAll('.opt'),function(o,i){
+      o.classList.remove('pick-y','pick-n'); if(i===ans) o.classList.add('pick-y');
+    });
+    if(pick!==ans) opt.classList.add('pick-n');
+    document.getElementById('qe-'+qid).classList.add('show'); return;
+  }
+
+  var ct=t.closest('.cmp-tabs button');
+  if(ct){
+    var cid=ct.parentNode.dataset.cmp, ci=ct.dataset.ci;
+    Array.prototype.forEach.call(ct.parentNode.children,function(b){b.classList.remove('on')});
+    ct.classList.add('on');
+    Array.prototype.forEach.call(document.querySelectorAll('[data-cp^="'+cid+'-"]'),function(p){
+      p.classList.toggle('on',p.dataset.cp===cid+'-'+ci)});
+    return;
+  }
+
+  var ck2=t.closest('.ck');
+  if(ck2){
+    ck2.classList.toggle('on');
+    var cw=ck2.closest('[data-ck]');
+    document.getElementById('cc-'+cw.dataset.ck).textContent=
+      cw.querySelectorAll('.ck.on').length+' of '+cw.querySelectorAll('.ck').length;
+    return;
+  }
+  var sh=t.closest('.step-h'); if(sh){sh.parentNode.classList.toggle('open');return}
+  var rb=t.closest('.reveal .btn-r'); if(rb){rb.parentNode.classList.add('on');return}
+});
+
+document.addEventListener('input',function(e){
+  var r=e.target; if(r.type!=='range') return;
+  var wrap=r.closest('[data-scale]'); if(!wrap) return;
+  var id=wrap.dataset.scale, cfg=SCALES[id];
+  wrap.querySelector('[data-sv="'+r.dataset.si+'"]').textContent=r.value;
+  var vals=Array.prototype.map.call(wrap.querySelectorAll('input[type=range]'),function(x){return +x.value});
+  var avg=vals.reduce(function(a,b){return a+b},0)/vals.length;
+  var band=cfg.bands.filter(function(b){return avg>=b[0]&&avg<=b[1]})[0]||cfg.bands[1];
+  var out=document.getElementById('so-'+id);
+  out.style.background=band[3]; out.innerHTML='<b>Average '+avg.toFixed(1)+'.</b> '+band[2];
+});
+
+document.addEventListener('change',function(e){
+  var b=e.target.closest('[data-done]'); if(!b) return;
+  var d={}; try{d=JSON.parse(localStorage.getItem('pace-sp')||'{}')}catch(err){}
+  d[b.dataset.done]=b.checked;
+  try{localStorage.setItem('pace-sp',JSON.stringify(d))}catch(err){}
+  paint();
+});
+function paint(){
+  var d={}; try{d=JSON.parse(localStorage.getItem('pace-sp')||'{}')}catch(err){}
+  MODULES.forEach(function(m){
+    var b=document.getElementById('chk-'+m.id); if(b) b.checked=!!d[m.id];
+    var t=tabsEl.querySelector('[data-id="'+m.id+'"]'); if(t) t.classList.toggle('done',!!d[m.id]);
+  });
+}
+paint();
+var start=(location.hash||'').replace('#','');
+go(PAGES.some(function(p){return p.id===start})?start:'home');
+window.addEventListener('hashchange',function(){
+  var id=(location.hash||'').replace('#','');
+  if(PAGES.some(function(p){return p.id===id})) go(id);
+});
+</script>

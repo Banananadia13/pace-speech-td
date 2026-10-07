@@ -23,6 +23,8 @@
 body{margin:0;background:#fff;color:var(--navy-body);font:15.5px/1.62 var(--sans)}
 h1,h2,h3,h4,h5,.serif{font-family:var(--serif);color:var(--navy)}
 b,strong{color:var(--navy)}
+a{color:var(--green-dp);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--navy)}
 
 /* ---------- title lockup / header (bookend: corner circles) ---------- */
 header.site{position:relative;overflow:hidden;background:#fff;padding:30px 22px 24px}
@@ -298,7 +300,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:
 <main id="main"></main>
 <footer class="site"><div class="wrap">
   <span>PACE Health Management &nbsp;·&nbsp; Helping people help themselves</span>
-  <span>Paediatric Speech Pathology T&amp;D · Module 1 · August 2026</span>
+  <span>Paediatric Speech Pathology T&amp;D · Module 1 · September 2026</span>
 </div></footer>
 
 <script>
@@ -723,7 +725,7 @@ var MODULES=[
   {h:"Your team, and who to go to"},
   {t:"quiz",title:"Who do you go to?",hint:"Five quick ones",items:[
    {q:"Two clients booked into the same slot on Thursday.",o:["Katie","Your supervisor","Mark"],a:0,e:"Katie. Bookings, calendar, initial appointments and admin all sit with her."},
-   {q:"You are not sure whether to refer a child for an autism assessment.",o:["Katie","Your supervisor","Mark"],a:1,e:"Your clinical supervisor — Georgia for the Peninsula and south-east, Angela for Reservoir and the north."},
+   {q:"You are not sure whether to refer a child for an autism assessment.",o:["Katie","Your supervisor","Mark"],a:1,e:"Your designated clinical supervisor — the person named for you when you started, not whoever happens to be at your site that day."},
    {q:"A parent has made a formal complaint about a session.",o:["Katie","Your supervisor","Mark"],a:2,e:"Mark. Serious issues and escalations go up."},
    {q:"You think a child may need OT.",o:["Katie","Internal referral process","Ring an OT you know"],a:1,e:"Use the internal referral process, so it is tracked and allocated. Ringing someone you happen to know works right up until they go on leave."},
    {q:"You are three weeks behind on reports and starting to dread Mondays.",o:["Push through, it will pass","Your supervisor","Mark"],a:1,e:"Your supervisor, and sooner than you want to. This is a caseload and workload conversation, and it is exactly what supervision is for."}]},
@@ -850,6 +852,7 @@ var MODULES=[
   {h:"Choosing a pathway"},
   {t:"diagram",title:"From problem to pathway",d:DIA_PATH},
   {t:"note",body:"<b>Oral-motor or sensory?</b> The same presenting problem needs a different pathway depending on which is driving it. This holds for articulation and for feeding, and it is the clearest worked example of pathway logic in the module."},
+  {t:"note",body:"<b>Where stuttering is the driver, the pathway is already written.</b> We work from the programs developed at the Australian Stuttering Research Centre at UTS — the Lidcombe Program for preschoolers, the Westmead Program as the syllable-timed alternative, and the Child Stuttering Severity Chart for severity ratings. Do not improvise a stuttering plan when a manualised one exists. The current manuals, the parent and teacher handouts, and the lecture notes are on the <a href=\"#res\" data-go=\"res\">Resources</a> page."},
   {h:"Planning the session"},
   {t:"cards",title:"Contingency cards — what if…",hint:"Have an answer before you walk in",items:[
    ["He refuses in the first five minutes","Drop the demand, not the session. Move to something he can win at, get him back in the window, and re-enter sideways. Record what preceded the refusal — that is your data."],
@@ -922,6 +925,7 @@ var MODULES=[
     ["Uses a whole-body listening posture",2],["Orders independently at the canteen using any method",1],
     ["Greets peers in an age-appropriate manner",2],["Says no to an activity he does not want to do",1]],
    e:"The ones we write are about participation, being understood, and self-advocacy. The ones we do not are about looking typical — they train masking, and masking has a well-documented cost. New grads need a script for saying this to a school, because schools ask for the second list constantly and are not being malicious when they do."},
+  {t:"note",body:"<b>Where to keep learning this.</b> Two Australian sources we point clinicians at, both led by Autistic people: <a href=\"https://reframingautism.org.au/\" target=\"_blank\" rel=\"noopener\">Reframing Autism</a> for identity, language and family resources, and <a href=\"https://playlearnchat.com/\" target=\"_blank\" rel=\"noopener\">Play. Learn. Chat.</a> for affirming goal and report language. If a goal on your caseload would not survive being read back to the child as an adult, it is the wrong goal. See the <a href=\"#res\" data-go=\"res\">Resources</a> page."},
   {t:"cards",title:"Scripts for hard moments",items:[
    ["\"Can you write a goal for eye contact?\"","\"I can write a goal about him letting people know he is listening — a lot of kids do that without looking, and forcing eye contact usually costs them attention rather than adding it. Would that work for what you need?\""],
    ["\"Will she ever be normal?\"","Do not answer the word. Answer the fear underneath it: \"What are you most worried about for her?\" It is almost always something specific — friends, school, independence — and that you can work with."],
@@ -1098,6 +1102,7 @@ var MODULES=[
     why:"Specialist multidisciplinary feeding territory. Know the pathway, make the referral, and stay involved for communication."},
    {label:"Oral sensory-based",tone:"good",body:"Narrow accepted range, texture aversion, gagging on novel foods, mealtime distress, growing pressure at home. No organic cause identified.",
     why:"This is the group where community speech pathology can do real work — environment, pacing, pressure, graded exposure — with dietetics alongside for nutritional adequacy."}]},
+  {t:"note",tone:"warn",body:"<b>When a family chooses to keep eating and drinking anyway.</b> Some children — most often those with cerebral palsy, a neurological condition or a palliative pathway — will keep eating and drinking food and fluids that carry a known risk, because the family, and often the child, judge the quality of life to be worth it. That is a legitimate decision and not a failed recommendation. Speech Pathology Australia's position on informed choice and shared decision making (\"risk feeding\") covers infants and children as well as adults, and the parts that matter most here are: a signed waiver is not informed consent; the decision belongs to the team, the family and the child, not to you alone; the discussion has to be documented — who was there, what was explained, what was decided; the family can revisit the decision at any time; and services continue either way. <b>A new clinician's job is to recognise one of these and escalate it, not to lead it.</b> Linked on the <a href=\"#res\" data-go=\"res\">Resources</a> page."},
   {t:"quiz",title:"\"My three-year-old only eats eight foods.\"",items:[
    {q:"Pick the most important next question.",o:["Which eight foods are they?","Is that range getting wider or narrower?","Have you tried hiding vegetables in things?"],a:1,
     e:"Direction of travel. A stable range of eight in a thriving, content child is a very different clinical picture to a range that was fifteen last year. Narrowing is the concerning direction, and it is the question people forget to ask."}]},
@@ -1195,10 +1200,12 @@ function homePage(){
   h+='<h3 class="sec"><span class="badge">3</span>Who to go to</h3>'+
     wTable({head:["Situation","Who"],rows:[
       ["Initial appointments, bookings, calendar, admin","Katie"],
-      ["Clinical questions, caseload, supervision","Georgia — Peninsula and south-east<br>Angela — Reservoir and north"],
-      ["Serious issues, escalations, complaints","Mark"]]});
-  h+='<div class="bar"><span class="lbl">Still to settle</span>The NDIS content sits outside the six as an induction session, and the restrictive practice detail in Workshop 5 needs a compliance check before that session runs.</div>';
+      ["Clinical questions, caseload, supervision","Your designated clinical supervisor"],
+      ["Serious issues, escalations, complaints","Mark"]]})+
+    '<div class="note"><b>Supervision follows people, not postcodes.</b> Your designated supervisor is named for you when you start and stays with you. Georgia currently holds the Peninsula and south-east and Angela Reservoir and the north, but teams are shared as they grow, so ask who yours is rather than assuming it is whoever is at your site.</div>';
+  h+='<div class="bar"><span class="lbl">Still to settle</span>The NDIS content sits outside the six as an induction session, the restrictive practice detail in Workshop 5 needs a compliance check before that session runs, and the supervision wording above is with Mark to confirm.</div>';
   h+='<div class="btnrow"><button class="btn" data-go="w1">Start with Workshop 1 →</button>'+
+     '<button class="btn ghost" data-go="res">Resources</button>'+
      '<button class="btn ghost" data-go="fac">Facilitator notes</button></div>';
   return h;
 }
@@ -1219,7 +1226,63 @@ function ndisPage(){
     ["Talking to families about money","<ul><li>Being straight about costs, session counts and what a plan will stretch to</li><li>What to do when funding runs out and the child still needs support</li></ul>"]]});
   h+='<div class="note warn"><b>Alternative.</b> If an induction session is not practical, fold this into Workshop 3, which already covers documentation. The join is not artificial — but Workshop 3 becomes the heaviest hour in the module and funding mechanics get about fifteen minutes.</div>';
   h+='<div class="btnrow"><button class="btn ghost" data-go="w6">← Workshop 6</button>'+
-     '<button class="btn" data-go="fac">For facilitators →</button></div>';
+     '<button class="btn" data-go="res">Resources →</button></div>';
+  return h;
+}
+var A=function(u,t){return '<a href="'+u+'" target="_blank" rel="noopener">'+t+'</a>'};
+function resPage(){
+  SECN=0;
+  var UTS='https://www.uts.edu.au/research/centres/australian-stuttering-research-centre/resources';
+  var h='<div class="lockup"><div class="eyebrow">Reference · outside the six</div>'+
+    '<h2>Resources</h2><p class="subline">Where to look things up, what each source is good for, and where it stops.</p></div>'+
+    '<div class="note"><b>These are the sources we actually work from,</b> sent through by Angela in September 2026. Versions were checked on 18 September 2026 — the stuttering manuals in particular are revised often, so take the guide from the site rather than from a copy someone saved.</div>';
+
+  h+=block({h:"Stuttering",p:"Our stuttering protocols are based on the programs developed at the Australian Stuttering Research Centre at UTS. Everything below is free."});
+  h+=wTable({head:["What","Use it for"],rows:[
+    [A(UTS+'/lidcombe-program','Lidcombe Program Treatment Guide')+' <span class="tag">v1.7c · Aug 2025</span>',
+     "Preschool stuttering. Parent-delivered verbal contingencies — your job is to train and supervise the parent, weekly, with severity ratings in front of you."],
+    [A(UTS+'/westmead-program','Westmead Program Treatment Guide')+' <span class="tag">v1.3 · Feb 2023</span>',
+     "The syllable-timed alternative for preschoolers, with audio and video models of the speech pattern on the same page. Worth knowing before you need it."],
+    ["Child Stuttering Severity Chart <span class=\"tag\">Dec 2022</span>",
+     "The parent's daily 0–9 rating. It is the measure that drives the treatment decisions and your outcome data — set it up in session one, not at review."],
+    ["Stuttering Treatment Activity Guides <span class=\"tag\">preschool · school-age</span>",
+     "Practical activity ideas for treatment sessions, split by age. Useful for a clinician who has the manual and still cannot picture the hour."],
+    [A(UTS,'Stuttering and its clinical management — twelve lectures')+' <span class="tag">Aug 2026</span>',
+     "The closest thing to a free textbook, updated last month. Send new grads to the lecture on the condition in front of them rather than the whole thing."],
+    ["Parent and teacher handouts",
+     "Preschool teachers, stuttering in schools, and bullying and stuttering. Hand these over rather than writing your own — and they answer the parent-guilt question better than you will in the room."]]});
+  h+=block({t:"note",body:"<b>Do not improvise a stuttering plan.</b> Manualised programs exist, the evidence sits behind them, and \"we tried some strategies\" does not survive a plan review. If a case does not fit the manual, that is a supervision conversation."});
+
+  h+=block({h:"Neurodiversity-affirming practice",p:"Both of these are led by Autistic people. This is the reading behind Workshop 4."});
+  h+=wTable({head:["What","Use it for"],rows:[
+    [A('https://reframingautism.org.au/','Reframing Autism')+' <span class="tag">Australian · free</span>',
+     "Autistic-led charity. Free resource library, a free Autism Essentials course, and material written for families — including a welcome pack for newly identified Autistic people. Use it for language, identity and what to hand a parent after a diagnosis."],
+    [A('https://playlearnchat.com/','Play. Learn. Chat.')+' <span class="tag">Adina Levy</span>',
+     "Run by an Autistic ADHDer speech pathologist. The free podcast and downloads are the entry point; the paid learning hub and the affirming report-language tools are the depth. Closest fit to the goal and report writing in Workshops 3 and 4."]]});
+  h+=block({t:"note",tone:"warn",body:"<b>Most of the Play. Learn. Chat. depth is paid.</b> If a clinician wants the learning hub, that is a professional development budget conversation with their supervisor, not a personal expense."});
+
+  h+=block({h:"Feeding, and informed choice",p:"Relevant to Workshop 6, and to any child on your caseload who eats and drinks with known risk."});
+  h+=wTable({head:["What","Use it for"],rows:[
+    [A('https://www.speechpathologyaustralia.org.au/Common/Uploaded%20files/Smart%20Suite/Smart%20Library/1b67af79-1074-4a30-a9a0-61f3eccb7b2d/20200221%20Position%20Statement%20Risk%20Feeding.pdf','SPA — informed choice and shared decision making in dysphagia')+' <span class="tag">position statement</span>',
+     "The Australian position, and it explicitly covers infants and children. The four things to take from it: a signed waiver is not informed consent, the decision sits with the team and the family, the discussion must be documented, and the person can change their mind at any time."],
+    ["SPA Smart Library <span class=\"tag\">member login</span>",
+     "Angela's link goes to the members' library, so you will need to be signed in to SPA to open it. The position statement above is the same content in a public file."],
+    ["Royal Children's Hospital feeding document <span class=\"tag\">to come</span>",
+     "Angela intended to send a second, paediatric-specific document. Both links in her email resolved to the SPA resource, so this one is still outstanding."]]});
+
+  h+=block({h:"Clinical topics",p:"For the nights when a condition walks in that you have not seen since university."});
+  h+=wTable({head:["What","Use it for"],rows:[
+    [A('https://www.asha.org/practice-portal/','ASHA Practice Portal')+' <span class="tag">United States</span>',
+     "Peer-reviewed summaries by topic, each following the same shape: signs and symptoms, incidence, assessment, treatment, then references. Good for "+
+     A('https://www.asha.org/practice-portal/clinical-topics/late-language-emergence/','late language emergence')+", "+
+     A('https://www.asha.org/practice-portal/clinical-topics/childhood-apraxia-of-speech/','childhood apraxia of speech')+
+     ", childhood fluency disorders, spoken and written language disorders, AAC, autism, social communication and paediatric feeding and swallowing."]]});
+  h+=block({t:"note",tone:"warn",body:"<b>Read it as an American document.</b> Eligibility, school services and funding on those pages are US systems and do not describe anything we do. Some norms are US-normed, and the terminology differs from ours. Use it for clinical depth — mechanism, assessment logic, treatment options — and use Speech Pathology Australia, the NDIS and PACE policy for anything about what you are allowed to do."});
+
+  h+='<div class="bar"><span class="lbl">The one thing</span>Australian sources first for anything procedural — scope, consent, reporting, funding. Everywhere else, use the best source you can find and say where it came from.</div>';
+  h+='<div class="btnrow"><button class="btn ghost" data-go="ndis">← NDIS Essentials</button>'+
+     '<button class="btn" data-go="fac">For facilitators →</button>'+
+     '<button class="btn ghost" data-print="1">Print this page</button></div>';
   return h;
 }
 function facPage(){
@@ -1239,7 +1302,10 @@ function facPage(){
   h+='<h3 class="sec"><span class="badge">1</span>Open decisions</h3>'+
     wTable({head:["Decision","Who"],rows:[
       ["Whether NDIS Essentials runs as induction, or folds into Workshop 3","Georgia and Angela"],
+      ["Feedback on the six workshop drafts","Angela — on her report-writing Friday"],
+      ["Confirm the \"Who to go to\" wording now supervision may be shared between the south-east and Reservoir teams","Aidan, with Mark"],
       ["Finalise the feeding framing, screener questions and referral thresholds","Angela"],
+      ["Send the Royal Children's feeding document — both links in the September email pointed to the same SPA resource","Angela"],
       ["Compliance check on restrictive practices, and point Workshop 5 at PACE policy","Needs an owner"],
       ["Confirm the internal referral process end to end, including how you learn a referral has been allocated","Aidan, with the OT team"],
       ["Katie's email address for the platform and handbook","Georgia or Angela"],
@@ -1257,6 +1323,7 @@ function facPage(){
 var PAGES=[{id:"home",label:"Home",num:"",html:homePage}]
   .concat(MODULES.map(function(m){return {id:m.id,label:m.title,num:String(m.n),html:function(){return modulePage(m)}}}))
   .concat([{id:"ndis",label:"NDIS Essentials",num:"+",html:ndisPage},
+           {id:"res",label:"Resources",num:"↗",html:resPage},
            {id:"fac",label:"For facilitators",num:"i",html:facPage}]);
 
 var tabsEl=document.getElementById('tabs'), mainEl=document.getElementById('main');
